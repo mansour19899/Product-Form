@@ -6,8 +6,19 @@ using System.Threading.Tasks;
 
 namespace Product_Form
 {
-    public class DropDown
+    public  class DropDown
     {
+        ProductFormEntities db;
+        public DropDown()
+        {
+             db = new ProductFormEntities();    
+        }
+
+        public List<Color>  listColors()
+        {
+            var list = db.Colors.ToList();
+            return list;
+        }
 
     }
 }

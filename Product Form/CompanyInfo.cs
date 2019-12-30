@@ -12,6 +12,9 @@ namespace Product_Form
 {
     public partial class CompanyInfo : Form
     {
+        List<Panel> panels;
+        List<string> headers;
+        int step = 0;
         public CompanyInfo()
         {
             InitializeComponent();
@@ -24,17 +27,27 @@ namespace Product_Form
 
         private void CompanyInfo_Load(object sender, EventArgs e)
         {
+            panels = new List<Panel>() { panel1, panel2, panel3 };
+            headers = new List<string>() { "COMPANY INFO", "PRODUCT INFO", "Product Dimention" };
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panel1.Hide();
+            panels.ElementAt(step).Hide();
+            step = step + 1;
+            panels.ElementAt(step).Show();
+            lblHeaders.Text = headers.ElementAt(step);
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panel1.Show();
+            panels.ElementAt(step).Hide();
+            step = step- 1;
+            panels.ElementAt(step).Show();
+            lblHeaders.Text = headers.ElementAt(step);
         }
     }
 }

@@ -19,7 +19,9 @@ namespace Product_Form
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            DropDown dr = new DropDown();
+            var rr = dr.listColors();
+            int x = 0;
         }
 
         private void btnProductForm_Click(object sender, EventArgs e)
