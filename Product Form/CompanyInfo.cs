@@ -15,9 +15,11 @@ namespace Product_Form
         List<Panel> panels;
         List<string> headers;
         int step = 0;
+        DropDown drop;
         public CompanyInfo()
         {
             InitializeComponent();
+            drop = new DropDown();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -29,6 +31,9 @@ namespace Product_Form
         {
             panels = new List<Panel>() { panel1, panel2, panel3 };
             headers = new List<string>() { "COMPANY INFO", "PRODUCT INFO", "Product Dimention" };
+            cmbcolors.DataSource = drop.listColors();
+            cmbcolors.DisplayMember = "Name";
+            cmbcolors.ValueMember = "Id";
 
         }
 
@@ -37,8 +42,7 @@ namespace Product_Form
             panels.ElementAt(step).Hide();
             step = step + 1;
             panels.ElementAt(step).Show();
-            lblHeaders.Text = headers.ElementAt(step);
-
+            lblHeaders.Text = headers.ElementAt(step);            
             
         }
 
@@ -46,8 +50,16 @@ namespace Product_Form
         {
             panels.ElementAt(step).Hide();
             step = step- 1;
-            panels.ElementAt(step).Show();
-            lblHeaders.Text = headers.ElementAt(step);
+            if (step == -1)
+            {
+                this.Close();
+            }
+            else
+            {
+                panels.ElementAt(step).Show();
+                lblHeaders.Text = headers.ElementAt(step);
+            }
+
         }
     }
 }

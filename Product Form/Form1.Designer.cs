@@ -37,7 +37,7 @@
             this.btnProductForm.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnProductForm.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductForm.Location = new System.Drawing.Point(558, 483);
-            this.btnProductForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProductForm.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductForm.Name = "btnProductForm";
             this.btnProductForm.Size = new System.Drawing.Size(316, 113);
             this.btnProductForm.TabIndex = 0;
@@ -51,9 +51,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1782, 853);
+            this.ClientSize = new System.Drawing.Size(1425, 682);
             this.Controls.Add(this.btnProductForm);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
