@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,21 @@ namespace Product_Form
                 lblHeaders.Text = headers.ElementAt(step);
             }
 
+        }
+
+        OpenFileDialog ofd = new OpenFileDialog();
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters  
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                // display image in picture box  
+                pic_showUpload.Image = new Bitmap(open.FileName);
+                // image file path  
+                MessageBox.Show(open.FileName);
+            }
         }
     }
 }

@@ -51,7 +51,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Product_Form.Resource1.LOGO_VANME_png;
-            this.pictureBox1.Location = new System.Drawing.Point(53, 669);
+            this.pictureBox1.Location = new System.Drawing.Point(31, 660);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(367, 157);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

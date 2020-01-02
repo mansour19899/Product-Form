@@ -154,6 +154,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\hiclipart.com.png" />
     <None Include="Resources\LOGO-VANME-png.png" />
   </ItemGroup>
   <ItemGroup>
