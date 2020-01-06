@@ -12,10 +12,9 @@ namespace Product_Form
     using System;
     using System.Collections.Generic;
     
-    public partial class Country
+    public partial class Brand
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string value { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

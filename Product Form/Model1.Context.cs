@@ -30,5 +30,6 @@ namespace Product_Form
         public virtual DbSet<Material> Materials { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<Color> Colors { get; set; }
+        public virtual DbSet<Brand> Brands { get; set; }
     }
 }

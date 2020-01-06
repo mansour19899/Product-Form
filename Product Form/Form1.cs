@@ -21,7 +21,7 @@ namespace Product_Form
         {
             DropDown dr = new DropDown();
             var rr = dr.listColors();
-            int x = 0;
+            
         }
 
         private void btnProductForm_Click(object sender, EventArgs e)

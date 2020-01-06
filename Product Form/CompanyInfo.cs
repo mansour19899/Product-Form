@@ -40,6 +40,10 @@ namespace Product_Form
             cmbcolors.DisplayMember = "Name";
             cmbcolors.ValueMember = "Id";
 
+            cmbCountry.DataSource = drop.countries();
+            cmbCountry.DisplayMember = "Name";
+            cmbCountry.ValueMember = "id";
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -47,8 +51,8 @@ namespace Product_Form
             panels.ElementAt(step).Hide();
             step = step + 1;
             panels.ElementAt(step).Show();
-            lblHeaders.Text = headers.ElementAt(step);            
-            
+            lblHeaders.Text = headers.ElementAt(step);
+            MessageBox.Show(cmbCountry.SelectedValue.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -146,6 +150,31 @@ namespace Product_Form
         private void pictureBox9_Click(object sender, EventArgs e)
         {
             ShowPicture(8);
+        }
+
+        private void btnCheckPrice_Click(object sender, EventArgs e)
+        {
+            double xx = 0;
+            if (txtPrice.Text != "")
+                 xx = Convert.ToDouble(txtPrice.Text);   
+
+            CostCenter frm = new CostCenter(xx);
+            frm.ShowDialog();
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
