@@ -70,6 +70,7 @@
     <Compile Include="CompanyInfo.Designer.cs">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConvertMetricInch.cs" />
     <Compile Include="CostCenter.cs">
       <SubType>Form</SubType>
     </Compile>

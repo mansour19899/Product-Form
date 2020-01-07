@@ -19,11 +19,13 @@ namespace Product_Form
         List<string> UploadedPicturs;
         int step = 0;
         DropDown drop;
+        ConvertMetricInch cvrt;
         public CompanyInfo()
         {
             InitializeComponent();
             drop = new DropDown();
             UploadedPicturs = new List<string>();
+            cvrt = new ConvertMetricInch();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -51,8 +53,7 @@ namespace Product_Form
             panels.ElementAt(step).Hide();
             step = step + 1;
             panels.ElementAt(step).Show();
-            lblHeaders.Text = headers.ElementAt(step);
-            MessageBox.Show(cmbCountry.SelectedValue.ToString());
+            lblHeaders.Text = headers.ElementAt(step);           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -174,6 +175,131 @@ namespace Product_Form
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void radioButtonMetric_Click(object sender, EventArgs e)
+        {
+            CalculateMetric();
+        }
+
+        private void radioButtonIperial_Click(object sender, EventArgs e)
+        {
+            CalculateImperial();
+        }
+        public void CalculateMetric()
+        {
+            txtWidth.Text = cvrt.WidthM.ToString();
+            txtDepth.Text = cvrt.DepthM.ToString();
+            txtHeight.Text = cvrt.HeightM.ToString();
+            txtWeight.Text = cvrt.WeightM.ToString();
+        }
+        public void CalculateImperial()
+        {
+            txtWidth.Text = cvrt.WidthI.ToString();
+            txtDepth.Text = cvrt.DepthI.ToString();
+            txtHeight.Text = cvrt.HeightI.ToString();
+            txtWeight.Text = cvrt.WeightI.ToString();
+        }
+
+        private void txtWidth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDepth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtHeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtWidth_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtWidth.Text != "")
+            {
+                if (radioButtonMetric.Checked == true)
+                    cvrt.WidthM = Convert.ToDouble(txtWidth.Text);
+                else
+                    cvrt.WidthI = Convert.ToDouble(txtWidth.Text);
+            }
+
+        }
+
+        private void txtDepth_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(txtDepth.Text!="")
+            { 
+                if (radioButtonMetric.Checked == true)
+                    cvrt.DepthM = Convert.ToDouble(txtDepth.Text);
+                else
+                    cvrt.DepthI = Convert.ToDouble(txtDepth.Text);
+            }
+        }
+
+        private void txtHeight_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtHeight.Text != "")
+            {
+                if (radioButtonMetric.Checked == true)
+                    cvrt.HeightM = Convert.ToDouble(txtHeight.Text);
+                else
+                    cvrt.HeightI = Convert.ToDouble(txtHeight.Text);
+            }
+        }
+
+        private void txtWeight_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtWeight.Text != "")
+            {
+                if (radioButtonMetric.Checked == true)
+                    cvrt.WeightM = Convert.ToDouble(txtWeight.Text);
+                else
+                    cvrt.WeightI = Convert.ToDouble(txtWeight.Text);
             }
         }
     }

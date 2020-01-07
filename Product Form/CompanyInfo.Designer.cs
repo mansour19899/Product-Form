@@ -57,6 +57,7 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCheckPrice = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
             this.textBox27 = new System.Windows.Forms.TextBox();
@@ -107,17 +108,16 @@
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.btnCheckPrice = new System.Windows.Forms.Button();
+            this.lblWeight = new System.Windows.Forms.Label();
+            this.txtWeight = new System.Windows.Forms.TextBox();
+            this.lblHeight = new System.Windows.Forms.Label();
+            this.txtHeight = new System.Windows.Forms.TextBox();
+            this.lblDepth = new System.Windows.Forms.Label();
+            this.txtWidth = new System.Windows.Forms.TextBox();
+            this.lblWidth = new System.Windows.Forms.Label();
+            this.txtDepth = new System.Windows.Forms.TextBox();
+            this.radioButtonIperial = new System.Windows.Forms.RadioButton();
+            this.radioButtonMetric = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -478,6 +478,16 @@
             this.panel2.TabIndex = 27;
             this.panel2.Visible = false;
             // 
+            // btnCheckPrice
+            // 
+            this.btnCheckPrice.Location = new System.Drawing.Point(1541, 554);
+            this.btnCheckPrice.Name = "btnCheckPrice";
+            this.btnCheckPrice.Size = new System.Drawing.Size(120, 38);
+            this.btnCheckPrice.TabIndex = 58;
+            this.btnCheckPrice.Text = "CHECK";
+            this.btnCheckPrice.UseVisualStyleBackColor = true;
+            this.btnCheckPrice.Click += new System.EventHandler(this.btnCheckPrice_Click);
+            // 
             // comboBox3
             // 
             this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 13.8F);
@@ -799,16 +809,16 @@
             this.panel3.Controls.Add(this.checkBox9);
             this.panel3.Controls.Add(this.checkBox8);
             this.panel3.Controls.Add(this.checkBox7);
-            this.panel3.Controls.Add(this.label28);
-            this.panel3.Controls.Add(this.textBox24);
-            this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.textBox13);
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.textBox12);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.textBox11);
-            this.panel3.Controls.Add(this.radioButton2);
-            this.panel3.Controls.Add(this.radioButton1);
+            this.panel3.Controls.Add(this.lblWeight);
+            this.panel3.Controls.Add(this.txtWeight);
+            this.panel3.Controls.Add(this.lblHeight);
+            this.panel3.Controls.Add(this.txtHeight);
+            this.panel3.Controls.Add(this.lblDepth);
+            this.panel3.Controls.Add(this.txtWidth);
+            this.panel3.Controls.Add(this.lblWidth);
+            this.panel3.Controls.Add(this.txtDepth);
+            this.panel3.Controls.Add(this.radioButtonIperial);
+            this.panel3.Controls.Add(this.radioButtonMetric);
             this.panel3.Location = new System.Drawing.Point(12, 93);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1751, 659);
@@ -1079,128 +1089,128 @@
             this.checkBox7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox7.UseVisualStyleBackColor = true;
             // 
-            // label28
+            // lblWeight
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label28.Location = new System.Drawing.Point(42, 383);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(159, 38);
-            this.label28.TabIndex = 41;
-            this.label28.Text = "Weight (kg)";
+            this.lblWeight.AutoSize = true;
+            this.lblWeight.Font = new System.Drawing.Font("Segoe UI", 16.2F);
+            this.lblWeight.Location = new System.Drawing.Point(42, 383);
+            this.lblWeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWeight.Name = "lblWeight";
+            this.lblWeight.Size = new System.Drawing.Size(159, 38);
+            this.lblWeight.TabIndex = 41;
+            this.lblWeight.Text = "Weight (kg)";
             // 
-            // textBox24
+            // txtWeight
             // 
-            this.textBox24.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox24.Location = new System.Drawing.Point(43, 425);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(313, 38);
-            this.textBox24.TabIndex = 33;
+            this.txtWeight.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.txtWeight.Location = new System.Drawing.Point(43, 425);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(4);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(313, 38);
+            this.txtWeight.TabIndex = 33;
+            this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWeight_KeyPress);
+            this.txtWeight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtWeight_KeyUp);
             // 
-            // label16
+            // lblHeight
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label16.Location = new System.Drawing.Point(43, 293);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(161, 38);
-            this.label16.TabIndex = 33;
-            this.label16.Text = "Height (cm)";
+            this.lblHeight.AutoSize = true;
+            this.lblHeight.Font = new System.Drawing.Font("Segoe UI", 16.2F);
+            this.lblHeight.Location = new System.Drawing.Point(43, 293);
+            this.lblHeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHeight.Name = "lblHeight";
+            this.lblHeight.Size = new System.Drawing.Size(161, 38);
+            this.lblHeight.TabIndex = 33;
+            this.lblHeight.Text = "Height (cm)";
             // 
-            // textBox13
+            // txtHeight
             // 
-            this.textBox13.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox13.Location = new System.Drawing.Point(50, 335);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(313, 38);
-            this.textBox13.TabIndex = 32;
+            this.txtHeight.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.txtHeight.Location = new System.Drawing.Point(50, 335);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Size = new System.Drawing.Size(313, 38);
+            this.txtHeight.TabIndex = 32;
+            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeight_KeyPress);
+            this.txtHeight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtHeight_KeyUp);
             // 
-            // label15
+            // lblDepth
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label15.Location = new System.Drawing.Point(43, 204);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(154, 38);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "Depth (cm)";
+            this.lblDepth.AutoSize = true;
+            this.lblDepth.Font = new System.Drawing.Font("Segoe UI", 16.2F);
+            this.lblDepth.Location = new System.Drawing.Point(43, 204);
+            this.lblDepth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDepth.Name = "lblDepth";
+            this.lblDepth.Size = new System.Drawing.Size(154, 38);
+            this.lblDepth.TabIndex = 31;
+            this.lblDepth.Text = "Depth (cm)";
             // 
-            // textBox12
+            // txtWidth
             // 
-            this.textBox12.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox12.Location = new System.Drawing.Point(50, 146);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(313, 38);
-            this.textBox12.TabIndex = 30;
+            this.txtWidth.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.txtWidth.Location = new System.Drawing.Point(50, 146);
+            this.txtWidth.Margin = new System.Windows.Forms.Padding(4);
+            this.txtWidth.Name = "txtWidth";
+            this.txtWidth.Size = new System.Drawing.Size(313, 38);
+            this.txtWidth.TabIndex = 27;
+            this.txtWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWidth_KeyPress);
+            this.txtWidth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtWidth_KeyUp);
             // 
-            // label14
+            // lblWidth
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label14.Location = new System.Drawing.Point(43, 98);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(152, 38);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "Width (cm)";
+            this.lblWidth.AutoSize = true;
+            this.lblWidth.Font = new System.Drawing.Font("Segoe UI", 16.2F);
+            this.lblWidth.Location = new System.Drawing.Point(43, 98);
+            this.lblWidth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWidth.Name = "lblWidth";
+            this.lblWidth.Size = new System.Drawing.Size(152, 38);
+            this.lblWidth.TabIndex = 29;
+            this.lblWidth.Text = "Width (cm)";
             // 
-            // textBox11
+            // txtDepth
             // 
-            this.textBox11.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(49, 241);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(313, 38);
-            this.textBox11.TabIndex = 28;
+            this.txtDepth.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepth.Location = new System.Drawing.Point(49, 241);
+            this.txtDepth.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDepth.Name = "txtDepth";
+            this.txtDepth.Size = new System.Drawing.Size(313, 38);
+            this.txtDepth.TabIndex = 28;
+            this.txtDepth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDepth_KeyPress);
+            this.txtDepth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDepth_KeyUp);
             // 
-            // radioButton2
+            // radioButtonIperial
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.radioButton2.Location = new System.Drawing.Point(177, 22);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(138, 42);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Imperial";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonIperial.AutoSize = true;
+            this.radioButtonIperial.Font = new System.Drawing.Font("Segoe UI", 16.2F);
+            this.radioButtonIperial.Location = new System.Drawing.Point(177, 22);
+            this.radioButtonIperial.Name = "radioButtonIperial";
+            this.radioButtonIperial.Size = new System.Drawing.Size(138, 42);
+            this.radioButtonIperial.TabIndex = 1;
+            this.radioButtonIperial.Text = "Imperial";
+            this.radioButtonIperial.UseVisualStyleBackColor = true;
+            this.radioButtonIperial.Click += new System.EventHandler(this.radioButtonIperial_Click);
             // 
-            // radioButton1
+            // radioButtonMetric
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.radioButton1.Location = new System.Drawing.Point(49, 22);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(117, 42);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Metric";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // btnCheckPrice
-            // 
-            this.btnCheckPrice.Location = new System.Drawing.Point(1541, 554);
-            this.btnCheckPrice.Name = "btnCheckPrice";
-            this.btnCheckPrice.Size = new System.Drawing.Size(120, 38);
-            this.btnCheckPrice.TabIndex = 58;
-            this.btnCheckPrice.Text = "CHECK";
-            this.btnCheckPrice.UseVisualStyleBackColor = true;
-            this.btnCheckPrice.Click += new System.EventHandler(this.btnCheckPrice_Click);
+            this.radioButtonMetric.AutoSize = true;
+            this.radioButtonMetric.Checked = true;
+            this.radioButtonMetric.Font = new System.Drawing.Font("Segoe UI", 16.2F);
+            this.radioButtonMetric.Location = new System.Drawing.Point(49, 22);
+            this.radioButtonMetric.Name = "radioButtonMetric";
+            this.radioButtonMetric.Size = new System.Drawing.Size(117, 42);
+            this.radioButtonMetric.TabIndex = 0;
+            this.radioButtonMetric.TabStop = true;
+            this.radioButtonMetric.Text = "Metric";
+            this.radioButtonMetric.UseVisualStyleBackColor = true;
+            this.radioButtonMetric.Click += new System.EventHandler(this.radioButtonMetric_Click);
             // 
             // CompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1757, 870);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblHeaders);
@@ -1296,16 +1306,16 @@
         private System.Windows.Forms.CheckBox checkBox9;
         private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label lblWeight;
+        private System.Windows.Forms.TextBox txtWeight;
+        private System.Windows.Forms.Label lblHeight;
+        private System.Windows.Forms.TextBox txtHeight;
+        private System.Windows.Forms.Label lblDepth;
+        private System.Windows.Forms.TextBox txtWidth;
+        private System.Windows.Forms.Label lblWidth;
+        private System.Windows.Forms.TextBox txtDepth;
+        private System.Windows.Forms.RadioButton radioButtonIperial;
+        private System.Windows.Forms.RadioButton radioButtonMetric;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox25;
         private System.Windows.Forms.Label label32;
