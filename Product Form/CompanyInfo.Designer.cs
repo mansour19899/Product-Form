@@ -210,6 +210,7 @@
             // cmbCountry
             // 
             this.cmbCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCountry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbCountry.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.cmbCountry.FormattingEnabled = true;
             this.cmbCountry.Location = new System.Drawing.Point(878, 457);
@@ -622,6 +623,7 @@
             // cmbMaterial
             // 
             this.cmbMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbMaterial.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.cmbMaterial.FormattingEnabled = true;
             this.cmbMaterial.Items.AddRange(new object[] {
@@ -663,6 +665,7 @@
             // cmbcolors
             // 
             this.cmbcolors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbcolors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbcolors.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.cmbcolors.FormattingEnabled = true;
             this.cmbcolors.Items.AddRange(new object[] {
@@ -1210,9 +1213,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1757, 870);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblHeaders);
