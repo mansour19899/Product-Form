@@ -19,7 +19,13 @@ namespace Product_Form
             var list = db.Colors.ToList();
             return list;
         }
-        
+
+        public List<Material> listMaterial()
+        {
+            var list = db.Materials.ToList();
+            return list;
+        }
+
         public List<Country> countries()
         {
             List<Country> list = new List<Country>()

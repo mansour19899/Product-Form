@@ -46,6 +46,11 @@ namespace Product_Form
             cmbCountry.DisplayMember = "Name";
             cmbCountry.ValueMember = "id";
 
+            cmbMaterial.DataSource = drop.listMaterial();
+            cmbMaterial.DisplayMember = "MaterialName";
+            cmbMaterial.ValueMember = "id";
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)

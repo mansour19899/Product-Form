@@ -69,7 +69,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbMaterial = new System.Windows.Forms.ComboBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.cmbcolors = new System.Windows.Forms.ComboBox();
@@ -456,7 +456,7 @@
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.txtPrice);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.cmbMaterial);
             this.panel2.Controls.Add(this.checkBox2);
             this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.cmbcolors);
@@ -619,19 +619,20 @@
             this.label13.TabIndex = 45;
             this.label13.Text = "Material";
             // 
-            // comboBox2
+            // cmbMaterial
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMaterial.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.cmbMaterial.FormattingEnabled = true;
+            this.cmbMaterial.Items.AddRange(new object[] {
             "Canada",
             "Us",
             "Uk"});
-            this.comboBox2.Location = new System.Drawing.Point(918, 317);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(692, 39);
-            this.comboBox2.TabIndex = 31;
+            this.cmbMaterial.Location = new System.Drawing.Point(918, 317);
+            this.cmbMaterial.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbMaterial.Name = "cmbMaterial";
+            this.cmbMaterial.Size = new System.Drawing.Size(692, 39);
+            this.cmbMaterial.TabIndex = 31;
             // 
             // checkBox2
             // 
@@ -661,6 +662,7 @@
             // 
             // cmbcolors
             // 
+            this.cmbcolors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbcolors.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.cmbcolors.FormattingEnabled = true;
             this.cmbcolors.Items.AddRange(new object[] {
@@ -1208,9 +1210,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1757, 870);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblHeaders);
@@ -1274,7 +1276,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox cmbcolors;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbMaterial;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label18;
