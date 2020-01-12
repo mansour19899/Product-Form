@@ -26,6 +26,7 @@ namespace Product_Form
             drop = new DropDown();
             UploadedPicturs = new List<string>();
             cvrt = new ConvertMetricInch();
+            radioButtonIperial.Checked = true;
         }
 
         private void label2_Click(object sender, EventArgs e)

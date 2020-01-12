@@ -62,16 +62,10 @@
             this.label32 = new System.Windows.Forms.Label();
             this.textBox27 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbMaterial = new System.Windows.Forms.ComboBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.cmbcolors = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -118,6 +112,18 @@
             this.txtDepth = new System.Windows.Forms.TextBox();
             this.radioButtonIperial = new System.Windows.Forms.RadioButton();
             this.radioButtonMetric = new System.Windows.Forms.RadioButton();
+            this.pnlCheckList = new System.Windows.Forms.Panel();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -131,6 +137,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_showUpload)).BeginInit();
+            this.pnlCheckList.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHeaders
@@ -445,21 +452,19 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.textBox11);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.textBox12);
             this.panel2.Controls.Add(this.btnCheckPrice);
             this.panel2.Controls.Add(this.comboBox3);
             this.panel2.Controls.Add(this.label32);
             this.panel2.Controls.Add(this.textBox27);
             this.panel2.Controls.Add(this.label31);
-            this.panel2.Controls.Add(this.checkBox6);
-            this.panel2.Controls.Add(this.checkBox5);
-            this.panel2.Controls.Add(this.checkBox4);
-            this.panel2.Controls.Add(this.checkBox3);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.txtPrice);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.cmbMaterial);
-            this.panel2.Controls.Add(this.checkBox2);
-            this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.cmbcolors);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label19);
@@ -496,7 +501,7 @@
             this.comboBox3.Items.AddRange(new object[] {
             "UPC",
             "YAN"});
-            this.comboBox3.Location = new System.Drawing.Point(923, 216);
+            this.comboBox3.Location = new System.Drawing.Point(915, 330);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(692, 39);
@@ -506,7 +511,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label32.Location = new System.Drawing.Point(80, 460);
+            this.label32.Location = new System.Drawing.Point(72, 459);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(234, 38);
@@ -517,7 +522,7 @@
             // 
             this.textBox27.AllowDrop = true;
             this.textBox27.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox27.Location = new System.Drawing.Point(85, 502);
+            this.textBox27.Location = new System.Drawing.Point(68, 501);
             this.textBox27.Margin = new System.Windows.Forms.Padding(4);
             this.textBox27.Multiline = true;
             this.textBox27.Name = "textBox27";
@@ -529,64 +534,12 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label31.Location = new System.Drawing.Point(919, 174);
+            this.label31.Location = new System.Drawing.Point(912, 288);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(81, 38);
             this.label31.TabIndex = 54;
             this.label31.Text = "Code";
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox6.Location = new System.Drawing.Point(1117, 424);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(199, 33);
-            this.checkBox6.TabIndex = 37;
-            this.checkBox6.Text = "Retractable handle";
-            this.checkBox6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox5.Location = new System.Drawing.Point(734, 424);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(184, 33);
-            this.checkBox5.TabIndex = 36;
-            this.checkBox5.Text = "Water Resistanct";
-            this.checkBox5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox4.Location = new System.Drawing.Point(83, 424);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(139, 33);
-            this.checkBox4.TabIndex = 35;
-            this.checkBox4.Text = "Expandable";
-            this.checkBox4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox3.Location = new System.Drawing.Point(1117, 377);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(207, 33);
-            this.checkBox3.TabIndex = 34;
-            this.checkBox3.Text = "Checkpoint Friendly";
-            this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // label17
             // 
@@ -613,7 +566,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label13.Location = new System.Drawing.Point(920, 275);
+            this.label13.Location = new System.Drawing.Point(908, 388);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(118, 38);
@@ -630,37 +583,11 @@
             "Canada",
             "Us",
             "Uk"});
-            this.cmbMaterial.Location = new System.Drawing.Point(918, 317);
+            this.cmbMaterial.Location = new System.Drawing.Point(918, 425);
             this.cmbMaterial.Margin = new System.Windows.Forms.Padding(4);
             this.cmbMaterial.Name = "cmbMaterial";
             this.cmbMaterial.Size = new System.Drawing.Size(692, 39);
             this.cmbMaterial.TabIndex = 31;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox2.Location = new System.Drawing.Point(734, 377);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(209, 33);
-            this.checkBox2.TabIndex = 33;
-            this.checkBox2.Text = "TSA Approved Lock";
-            this.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox1.Location = new System.Drawing.Point(85, 377);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(168, 33);
-            this.checkBox1.TabIndex = 32;
-            this.checkBox1.Text = "RFID Protected";
-            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // cmbcolors
             // 
@@ -672,7 +599,7 @@
             "Canada",
             "Us",
             "Uk"});
-            this.cmbcolors.Location = new System.Drawing.Point(80, 317);
+            this.cmbcolors.Location = new System.Drawing.Point(72, 415);
             this.cmbcolors.Margin = new System.Windows.Forms.Padding(4);
             this.cmbcolors.Name = "cmbcolors";
             this.cmbcolors.Size = new System.Drawing.Size(660, 39);
@@ -682,7 +609,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label18.Location = new System.Drawing.Point(80, 275);
+            this.label18.Location = new System.Drawing.Point(72, 373);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(83, 38);
@@ -693,7 +620,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label19.Location = new System.Drawing.Point(80, 174);
+            this.label19.Location = new System.Drawing.Point(73, 289);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(67, 38);
@@ -703,7 +630,7 @@
             // textBox16
             // 
             this.textBox16.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox16.Location = new System.Drawing.Point(80, 223);
+            this.textBox16.Location = new System.Drawing.Point(80, 331);
             this.textBox16.Margin = new System.Windows.Forms.Padding(4);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(660, 38);
@@ -713,7 +640,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label20.Location = new System.Drawing.Point(925, 90);
+            this.label20.Location = new System.Drawing.Point(913, 199);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(186, 38);
@@ -723,7 +650,7 @@
             // textBox17
             // 
             this.textBox17.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox17.Location = new System.Drawing.Point(922, 132);
+            this.textBox17.Location = new System.Drawing.Point(918, 241);
             this.textBox17.Margin = new System.Windows.Forms.Padding(4);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(693, 38);
@@ -733,17 +660,17 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label21.Location = new System.Drawing.Point(916, 5);
+            this.label21.Location = new System.Drawing.Point(915, 12);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(195, 38);
+            this.label21.Size = new System.Drawing.Size(182, 38);
             this.label21.TabIndex = 29;
-            this.label21.Text = "Product Name";
+            this.label21.Text = "Sub-category";
             // 
             // textBox18
             // 
             this.textBox18.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(922, 48);
+            this.textBox18.Location = new System.Drawing.Point(918, 57);
             this.textBox18.Margin = new System.Windows.Forms.Padding(4);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(693, 38);
@@ -753,7 +680,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label22.Location = new System.Drawing.Point(80, 90);
+            this.label22.Location = new System.Drawing.Point(72, 197);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(89, 38);
@@ -763,7 +690,7 @@
             // textBox19
             // 
             this.textBox19.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox19.Location = new System.Drawing.Point(80, 132);
+            this.textBox19.Location = new System.Drawing.Point(80, 240);
             this.textBox19.Margin = new System.Windows.Forms.Padding(4);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(660, 38);
@@ -773,17 +700,17 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label23.Location = new System.Drawing.Point(76, 5);
+            this.label23.Location = new System.Drawing.Point(73, 9);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(191, 38);
+            this.label23.Size = new System.Drawing.Size(136, 38);
             this.label23.TabIndex = 25;
-            this.label23.Text = "Product Type*";
+            this.label23.Text = "Category ";
             // 
             // textBox20
             // 
             this.textBox20.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox20.Location = new System.Drawing.Point(80, 48);
+            this.textBox20.Location = new System.Drawing.Point(80, 57);
             this.textBox20.Margin = new System.Windows.Forms.Padding(4);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(660, 38);
@@ -1098,17 +1025,17 @@
             // 
             this.lblWeight.AutoSize = true;
             this.lblWeight.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.lblWeight.Location = new System.Drawing.Point(42, 383);
+            this.lblWeight.Location = new System.Drawing.Point(42, 382);
             this.lblWeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(159, 38);
+            this.lblWeight.Size = new System.Drawing.Size(152, 38);
             this.lblWeight.TabIndex = 41;
-            this.lblWeight.Text = "Weight (kg)";
+            this.lblWeight.Text = "Weight (in)";
             // 
             // txtWeight
             // 
             this.txtWeight.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.txtWeight.Location = new System.Drawing.Point(43, 425);
+            this.txtWeight.Location = new System.Drawing.Point(49, 425);
             this.txtWeight.Margin = new System.Windows.Forms.Padding(4);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(313, 38);
@@ -1120,12 +1047,12 @@
             // 
             this.lblHeight.AutoSize = true;
             this.lblHeight.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.lblHeight.Location = new System.Drawing.Point(43, 293);
+            this.lblHeight.Location = new System.Drawing.Point(43, 292);
             this.lblHeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(161, 38);
+            this.lblHeight.Size = new System.Drawing.Size(147, 38);
             this.lblHeight.TabIndex = 33;
-            this.lblHeight.Text = "Height (cm)";
+            this.lblHeight.Text = "Height (in)";
             // 
             // txtHeight
             // 
@@ -1142,12 +1069,12 @@
             // 
             this.lblDepth.AutoSize = true;
             this.lblDepth.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.lblDepth.Location = new System.Drawing.Point(43, 204);
+            this.lblDepth.Location = new System.Drawing.Point(43, 192);
             this.lblDepth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDepth.Name = "lblDepth";
-            this.lblDepth.Size = new System.Drawing.Size(154, 38);
+            this.lblDepth.Size = new System.Drawing.Size(175, 48);
             this.lblDepth.TabIndex = 31;
-            this.lblDepth.Text = "Depth (cm)";
+            this.lblDepth.Text = "Depth (in)";
             // 
             // txtWidth
             // 
@@ -1167,9 +1094,9 @@
             this.lblWidth.Location = new System.Drawing.Point(43, 98);
             this.lblWidth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWidth.Name = "lblWidth";
-            this.lblWidth.Size = new System.Drawing.Size(152, 38);
+            this.lblWidth.Size = new System.Drawing.Size(173, 48);
             this.lblWidth.TabIndex = 29;
-            this.lblWidth.Text = "Width (cm)";
+            this.lblWidth.Text = "Width (in)";
             // 
             // txtDepth
             // 
@@ -1186,7 +1113,7 @@
             // 
             this.radioButtonIperial.AutoSize = true;
             this.radioButtonIperial.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.radioButtonIperial.Location = new System.Drawing.Point(177, 22);
+            this.radioButtonIperial.Location = new System.Drawing.Point(50, 32);
             this.radioButtonIperial.Name = "radioButtonIperial";
             this.radioButtonIperial.Size = new System.Drawing.Size(138, 42);
             this.radioButtonIperial.TabIndex = 1;
@@ -1199,7 +1126,7 @@
             this.radioButtonMetric.AutoSize = true;
             this.radioButtonMetric.Checked = true;
             this.radioButtonMetric.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.radioButtonMetric.Location = new System.Drawing.Point(49, 22);
+            this.radioButtonMetric.Location = new System.Drawing.Point(211, 32);
             this.radioButtonMetric.Name = "radioButtonMetric";
             this.radioButtonMetric.Size = new System.Drawing.Size(117, 42);
             this.radioButtonMetric.TabIndex = 0;
@@ -1208,14 +1135,159 @@
             this.radioButtonMetric.UseVisualStyleBackColor = true;
             this.radioButtonMetric.Click += new System.EventHandler(this.radioButtonMetric_Click);
             // 
+            // pnlCheckList
+            // 
+            this.pnlCheckList.Controls.Add(this.button2);
+            this.pnlCheckList.Controls.Add(this.checkBox6);
+            this.pnlCheckList.Controls.Add(this.checkBox5);
+            this.pnlCheckList.Controls.Add(this.checkBox4);
+            this.pnlCheckList.Controls.Add(this.checkBox3);
+            this.pnlCheckList.Controls.Add(this.checkBox2);
+            this.pnlCheckList.Controls.Add(this.checkBox1);
+            this.pnlCheckList.Location = new System.Drawing.Point(15, 81);
+            this.pnlCheckList.Name = "pnlCheckList";
+            this.pnlCheckList.Size = new System.Drawing.Size(1730, 689);
+            this.pnlCheckList.TabIndex = 29;
+            this.pnlCheckList.Visible = false;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBox6.Location = new System.Drawing.Point(1200, 252);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(199, 33);
+            this.checkBox6.TabIndex = 43;
+            this.checkBox6.Text = "Retractable handle";
+            this.checkBox6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBox5.Location = new System.Drawing.Point(817, 256);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(184, 33);
+            this.checkBox5.TabIndex = 42;
+            this.checkBox5.Text = "Water Resistanct";
+            this.checkBox5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBox4.Location = new System.Drawing.Point(168, 245);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(139, 33);
+            this.checkBox4.TabIndex = 41;
+            this.checkBox4.Text = "Expandable";
+            this.checkBox4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBox3.Location = new System.Drawing.Point(1200, 175);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(207, 33);
+            this.checkBox3.TabIndex = 40;
+            this.checkBox3.Text = "Checkpoint Friendly";
+            this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBox2.Location = new System.Drawing.Point(817, 175);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(209, 33);
+            this.checkBox2.TabIndex = 39;
+            this.checkBox2.Text = "TSA Approved Lock";
+            this.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBox1.Location = new System.Drawing.Point(168, 175);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(168, 33);
+            this.checkBox1.TabIndex = 38;
+            this.checkBox1.Text = "RFID Protected";
+            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(708, 403);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(253, 68);
+            this.button2.TabIndex = 44;
+            this.button2.Text = "Next";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 16.2F);
+            this.label14.Location = new System.Drawing.Point(916, 113);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(186, 38);
+            this.label14.TabIndex = 62;
+            this.label14.Text = "Style Number";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.textBox11.Location = new System.Drawing.Point(919, 157);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(693, 38);
+            this.textBox11.TabIndex = 60;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 16.2F);
+            this.label15.Location = new System.Drawing.Point(80, 100);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(183, 38);
+            this.label15.TabIndex = 61;
+            this.label15.Text = "Product Tittle";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.textBox12.Location = new System.Drawing.Point(80, 142);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(660, 38);
+            this.textBox12.TabIndex = 59;
+            // 
             // CompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1757, 870);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlCheckList);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblHeaders);
@@ -1242,6 +1314,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_showUpload)).EndInit();
+            this.pnlCheckList.ResumeLayout(false);
+            this.pnlCheckList.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1276,7 +1350,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox cmbcolors;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbMaterial;
@@ -1293,11 +1366,6 @@
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckBox checkBox12;
         private System.Windows.Forms.Label label30;
@@ -1339,5 +1407,17 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnCheckPrice;
+        private System.Windows.Forms.Panel pnlCheckList;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox12;
     }
 }
