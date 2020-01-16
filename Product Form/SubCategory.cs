@@ -12,20 +12,19 @@ namespace Product_Form
     using System;
     using System.Collections.Generic;
     
-    public partial class Color
+    public partial class SubCategory
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Color()
+        public SubCategory()
         {
-            this.OwnProducts = new HashSet<OwnProduct>();
+            this.CategoriesSubCategories = new HashSet<CategoriesSubCategory>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public string PantoneNumber { get; set; }
         public string Code { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OwnProduct> OwnProducts { get; set; }
+        public virtual ICollection<CategoriesSubCategory> CategoriesSubCategories { get; set; }
     }
 }

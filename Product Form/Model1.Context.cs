@@ -13,10 +13,10 @@ namespace Product_Form
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProductFormEntities : DbContext
+    public partial class VanmeEntities : DbContext
     {
-        public ProductFormEntities()
-            : base("name=ProductFormEntities")
+        public VanmeEntities()
+            : base("name=VanmeEntities")
         {
         }
     
@@ -25,11 +25,17 @@ namespace Product_Form
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Barcode> Barcodes { get; set; }
+        public virtual DbSet<Brand> Brands { get; set; }
+        public virtual DbSet<CategoriesSubCategory> CategoriesSubCategories { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Color> Colors { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Material> Materials { get; set; }
+        public virtual DbSet<OwnProduct> OwnProducts { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
-        public virtual DbSet<Color> Colors { get; set; }
-        public virtual DbSet<Brand> Brands { get; set; }
+        public virtual DbSet<SubCategory> SubCategories { get; set; }
     }
 }

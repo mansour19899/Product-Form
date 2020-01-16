@@ -14,7 +14,16 @@ namespace Product_Form
     
     public partial class Material
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Material()
+        {
+            this.OwnProducts = new HashSet<OwnProduct>();
+        }
+    
         public int Id { get; set; }
         public string MaterialName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OwnProduct> OwnProducts { get; set; }
     }
 }

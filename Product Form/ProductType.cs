@@ -14,7 +14,19 @@ namespace Product_Form
     
     public partial class ProductType
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ProductType()
+        {
+            this.OwnProducts = new HashSet<OwnProduct>();
+        }
+    
         public int Id { get; set; }
-        public string Type { get; set; }
+        public string Name { get; set; }
+        public string Code { get; set; }
+        public int Categorysubcategoreis_Id_fk { get; set; }
+    
+        public virtual CategoriesSubCategory CategoriesSubCategory { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OwnProduct> OwnProducts { get; set; }
     }
 }

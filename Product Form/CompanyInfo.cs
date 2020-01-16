@@ -22,6 +22,7 @@ namespace Product_Form
         ConvertMetricInch cvrt;
         public CompanyInfo()
         {
+            
             InitializeComponent();
             drop = new DropDown();
             UploadedPicturs = new List<string>();
@@ -47,6 +48,10 @@ namespace Product_Form
             cmbCountry.DisplayMember = "Name";
             cmbCountry.ValueMember = "id";
 
+            cmbCountryofOrgin.DataSource = drop.countries();
+            cmbCountryofOrgin.DisplayMember = "Name";
+            cmbCountryofOrgin.ValueMember = "id";
+
             cmbMaterial.DataSource = drop.listMaterial();
             cmbMaterial.DisplayMember = "MaterialName";
             cmbMaterial.ValueMember = "id";
@@ -58,8 +63,18 @@ namespace Product_Form
         {
             panels.ElementAt(step).Hide();
             step = step + 1;
-            panels.ElementAt(step).Show();
-            lblHeaders.Text = headers.ElementAt(step);           
+            if (step==3)
+            {
+                InsertOwnProduct();
+                this.Close();
+            }
+            else
+            {
+                panels.ElementAt(step).Show();
+                lblHeaders.Text = headers.ElementAt(step);
+            }
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -307,6 +322,41 @@ namespace Product_Form
                 else
                     cvrt.WeightI = Convert.ToDouble(txtWeight.Text);
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public void InsertOwnProduct()
+        {
+            VanmeEntities db = new VanmeEntities();
+
+            Company company = new Company();
+            company.CompanyName = txtCompany.Text;
+            company.Manufacture = txtManufacture.Text;
+            company.Website = txtWebSite.Text;
+            company.Email = txtEmail.Text;
+            company.StreetAddress = txtStreetAddress.Text;
+            company.AddressLine2 = txtAdressline2.Text;
+            company.City = txtCity.Text;
+            company.StateProvinceRegion = txtStateProvince.Text;
+            company.ZipPostlCode = txtZipPostalcode.Text;
+            company.Country_Id_fk = cmbCountry.SelectedIndex+1;
+            company.Phone = txtPhone.Text;
+            company.FAX = txtFax.Text;
+            bool CansaveCompany = db.Companies.Any(p => p.CompanyName == company.CompanyName);
+            db.Companies.Add(company);
+            if(db.SaveChanges()>0& CansaveCompany==false)
+             MessageBox.Show("Sucsess Save   "+company.CompanyName);
+            else
+                MessageBox.Show("Error Db Save Company");
+
+        }
+        public void InsertDeveloperProduct()
+        {
+
         }
     }
 }

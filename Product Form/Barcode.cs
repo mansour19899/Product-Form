@@ -12,18 +12,19 @@ namespace Product_Form
     using System;
     using System.Collections.Generic;
     
-    public partial class Color
+    public partial class Barcode
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Color()
+        public Barcode()
         {
             this.OwnProducts = new HashSet<OwnProduct>();
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string PantoneNumber { get; set; }
-        public string Code { get; set; }
+        public string BarcodeNumber { get; set; }
+        public string Sku { get; set; }
+        public string Style { get; set; }
+        public bool Active { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OwnProduct> OwnProducts { get; set; }

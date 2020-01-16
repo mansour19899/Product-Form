@@ -4,13 +4,30 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f23714e3cba3472fbcc77b778e7229bf" Name="Diagram1">
-        <EntityTypeShape EntityType="ProductFormModel.Company" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductFormModel.Country" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductFormModel.Material" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductFormModel.ProductType" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProductFormModel.Color" Width="1.5" PointX="5.375" PointY="3.75" />
-        <EntityTypeShape EntityType="ProductFormModel.Brand" Width="1.5" PointX="0.75" PointY="6.75" />
+      <Diagram DiagramId="bf2d4134f040489a8afca2b829075ee8" Name="Diagram1">
+        <EntityTypeShape EntityType="VanmeModel.Barcode" Width="1.5" PointX="3.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VanmeModel.Brand" Width="1.5" PointX="3.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VanmeModel.CategoriesSubCategory" Width="1.5" PointX="11" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VanmeModel.Category" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="VanmeModel.Color" Width="1.5" PointX="3.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VanmeModel.Company" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VanmeModel.Country" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VanmeModel.Image" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VanmeModel.Material" Width="1.5" PointX="3.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VanmeModel.OwnProduct" Width="1.5" PointX="6" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VanmeModel.ProductType" Width="1.5" PointX="13.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="VanmeModel.SubCategory" Width="1.5" PointX="8.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="VanmeModel.FK_Product_Barcode" ManuallyRouted="false" />
+        <AssociationConnector Association="VanmeModel.FK_Product_Brands" ManuallyRouted="false" />
+        <AssociationConnector Association="VanmeModel.FK_CategoriesSubCategories_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="VanmeModel.FK_CategoriesSubCategories_SubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="VanmeModel.FK_ProductType_CategoriesSubCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="VanmeModel.FK_Product_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="VanmeModel.FK_Company_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="VanmeModel.FK_Product_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="VanmeModel.FK_Image_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="VanmeModel.FK_Product_Materials" ManuallyRouted="false" />
+        <AssociationConnector Association="VanmeModel.FK_OwnProduct_ProductType" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
