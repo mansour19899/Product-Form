@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,7 +20,7 @@ namespace Product_Form
         List<string> UploadedPicturs;
         int step = 0;
         DropDown drop;
-        ConvertMetricInch cvrt;
+        ConvertMetricInch cvrt;        
         public CompanyInfo()
         {
             
@@ -55,6 +56,23 @@ namespace Product_Form
             cmbMaterial.DataSource = drop.listMaterial();
             cmbMaterial.DisplayMember = "MaterialName";
             cmbMaterial.ValueMember = "id";
+
+            cmbCategory.DataSource = drop.categories();
+            cmbCategory.DisplayMember = "Name";
+            cmbCategory.ValueMember = "Id";
+
+            cmbSubCategory.DataSource = drop.subCategories();
+            cmbSubCategory.DisplayMember = "Name";
+            cmbSubCategory.ValueMember = "Id";
+
+            cmbProductType.DataSource = drop.productTypes();
+            cmbProductType.DisplayMember = "Name";
+            cmbProductType.ValueMember = "Id";
+
+            cmbBrand.DataSource = drop.brands();
+            cmbBrand.DisplayMember = "Name";
+            cmbBrand.ValueMember = "Id";
+
 
 
         }
@@ -331,9 +349,30 @@ namespace Product_Form
 
         public void InsertOwnProduct()
         {
+            string mac = GetMACAddress().ToString();
             VanmeEntities db = new VanmeEntities();
 
+            var startId =Convert.ToInt16( db.Users.FirstOrDefault(p => p.MacAdress == mac).StartNumber);
+            int EndId = startId + 10000;
+
+
+            var CreatCompanyId = db.Companies.ToList().LastOrDefault(p=>p.Id>startId&&p.Id<EndId);
+            int newCompanyId = startId + 1;
+            if(CreatCompanyId!=null)
+            {
+                newCompanyId = CreatCompanyId.Id + 1;
+            }
+
+            var CreatProductId = db.OwnProducts.ToList().LastOrDefault(p => p.Id > startId && p.Id < EndId);
+            int newProductId = startId+1;
+            if (CreatProductId!=null)
+            {
+                 newProductId = CreatProductId.Id + 1;
+            }
+            
+
             Company company = new Company();
+            company.Id = newCompanyId;
             company.CompanyName = txtCompany.Text;
             company.Manufacture = txtManufacture.Text;
             company.Website = txtWebSite.Text;
@@ -343,20 +382,38 @@ namespace Product_Form
             company.City = txtCity.Text;
             company.StateProvinceRegion = txtStateProvince.Text;
             company.ZipPostlCode = txtZipPostalcode.Text;
-            company.Country_Id_fk = cmbCountry.SelectedIndex+1;
+            company.Country_Id_fk = cmbCountry.SelectedIndex + 1;
             company.Phone = txtPhone.Text;
             company.FAX = txtFax.Text;
             bool CansaveCompany = db.Companies.Any(p => p.CompanyName == company.CompanyName);
             db.Companies.Add(company);
-            if(db.SaveChanges()>0& CansaveCompany==false)
-             MessageBox.Show("Sucsess Save   "+company.CompanyName);
+            if (db.SaveChanges() > 0 & CansaveCompany == false)
+                MessageBox.Show("Sucsess Save   " + company.CompanyName);
             else
                 MessageBox.Show("Error Db Save Company");
+            
+
+            OwnProduct product = new OwnProduct();
+            
 
         }
         public void InsertDeveloperProduct()
         {
 
+        }
+        public string GetMACAddress()
+        {
+            NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+            String sMacAddress = string.Empty;
+            foreach (NetworkInterface adapter in nics)
+            {
+                if (sMacAddress == String.Empty)// only return MAC Address from first card
+                {
+                    IPInterfaceProperties properties = adapter.GetIPProperties();
+                    sMacAddress = adapter.GetPhysicalAddress().ToString();
+                }
+            }
+            return sMacAddress;
         }
     }
 }

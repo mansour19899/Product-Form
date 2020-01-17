@@ -52,7 +52,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="CompanyName" Type="nchar" MaxLength="40" />
           <Property Name="Manufacture" Type="nchar" MaxLength="30" />
           <Property Name="Website" Type="nchar" MaxLength="40" />
@@ -141,6 +141,16 @@
           <Property Name="Name" Type="nchar" MaxLength="30" Nullable="false" />
           <Property Name="Code" Type="nchar" MaxLength="2" Nullable="false" />
         </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nchar" MaxLength="30" />
+          <Property Name="Pass" Type="nchar" MaxLength="10" />
+          <Property Name="MacAdress" Type="nchar" MaxLength="30" />
+          <Property Name="StartNumber" Type="int" />
+        </EntityType>
         <Association Name="FK_CategoriesSubCategories_Category">
           <End Role="Category" Type="Self.Category" Multiplicity="1" />
           <End Role="CategoriesSubCategories" Type="Self.CategoriesSubCategories" Multiplicity="*" />
@@ -186,6 +196,18 @@
             </Principal>
             <Dependent Role="Image">
               <PropertyRef Name="Product_Id_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OwnProduct_Company">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="OwnProduct" Type="Self.OwnProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OwnProduct">
+              <PropertyRef Name="Company_Id_fk" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -286,6 +308,7 @@
           <EntitySet Name="OwnProduct" EntityType="Self.OwnProduct" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SubCategory" EntityType="Self.SubCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CategoriesSubCategories_Category" Association="Self.FK_CategoriesSubCategories_Category">
             <End Role="Category" EntitySet="Category" />
             <End Role="CategoriesSubCategories" EntitySet="CategoriesSubCategories" />
@@ -301,6 +324,10 @@
           <AssociationSet Name="FK_Image_Product" Association="Self.FK_Image_Product">
             <End Role="OwnProduct" EntitySet="OwnProduct" />
             <End Role="Image" EntitySet="Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OwnProduct_Company" Association="Self.FK_OwnProduct_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="OwnProduct" EntitySet="OwnProduct" />
           </AssociationSet>
           <AssociationSet Name="FK_OwnProduct_ProductType" Association="Self.FK_OwnProduct_ProductType">
             <End Role="ProductType" EntitySet="ProductType" />
@@ -385,25 +412,6 @@
           <Property Name="Code" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="OwnProducts" Relationship="Self.FK_Product_Color" FromRole="Color" ToRole="OwnProduct" />
         </EntityType>
-        <EntityType Name="Company">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CompanyName" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
-          <Property Name="Manufacture" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="Website" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="StreetAddress" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="AddressLine2" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="City" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="StateProvinceRegion" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="ZipPostlCode" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="Country_Id_fk" Type="Int32" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="FAX" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Country" Relationship="Self.FK_Company_Company" FromRole="Company" ToRole="Country" />
-        </EntityType>
         <EntityType Name="Country">
           <Key>
             <PropertyRef Name="Id" />
@@ -411,8 +419,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="Code" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Companies" Relationship="Self.FK_Company_Company" FromRole="Country" ToRole="Company" />
           <NavigationProperty Name="OwnProducts" Relationship="Self.FK_Product_Country" FromRole="Country" ToRole="OwnProduct" />
+          <NavigationProperty Name="Companies" Relationship="VanmeModel.FK_Company_Company" FromRole="Country" ToRole="Company" />
         </EntityType>
         <EntityType Name="Image">
           <Key>
@@ -472,6 +480,7 @@
           <NavigationProperty Name="Images" Relationship="Self.FK_Image_Product" FromRole="OwnProduct" ToRole="Image" />
           <NavigationProperty Name="Material" Relationship="Self.FK_Product_Materials" FromRole="OwnProduct" ToRole="Materials" />
           <NavigationProperty Name="ProductType" Relationship="VanmeModel.FK_OwnProduct_ProductType" FromRole="OwnProduct" ToRole="ProductType" />
+          <NavigationProperty Name="Company" Relationship="VanmeModel.FK_OwnProduct_Company" FromRole="OwnProduct" ToRole="Company" />
         </EntityType>
         <EntityType Name="ProductType">
           <Key>
@@ -565,18 +574,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Company_Company">
-          <End Role="Country" Type="Self.Country" Multiplicity="1" />
-          <End Role="Company" Type="Self.Company" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Country">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Company">
-              <PropertyRef Name="Country_Id_fk" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Product_Country">
           <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
           <End Role="OwnProduct" Type="Self.OwnProduct" Multiplicity="*" />
@@ -619,7 +616,6 @@
           <EntitySet Name="CategoriesSubCategories" EntityType="Self.CategoriesSubCategory" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Colors" EntityType="Self.Color" />
-          <EntitySet Name="Companies" EntityType="Self.Company" />
           <EntitySet Name="Countries" EntityType="Self.Country" />
           <EntitySet Name="Images" EntityType="Self.Image" />
           <EntitySet Name="Materials" EntityType="Self.Material" />
@@ -650,10 +646,6 @@
             <End Role="Color" EntitySet="Colors" />
             <End Role="OwnProduct" EntitySet="OwnProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK_Company_Company" Association="Self.FK_Company_Company">
-            <End Role="Country" EntitySet="Countries" />
-            <End Role="Company" EntitySet="Companies" />
-          </AssociationSet>
           <AssociationSet Name="FK_Product_Country" Association="Self.FK_Product_Country">
             <End Role="Country" EntitySet="Countries" />
             <End Role="OwnProduct" EntitySet="OwnProducts" />
@@ -670,6 +662,16 @@
             <End Role="ProductType" EntitySet="ProductTypes" />
             <End Role="OwnProduct" EntitySet="OwnProducts" />
           </AssociationSet>
+          <EntitySet Name="Users" EntityType="VanmeModel.User" />
+          <EntitySet Name="Companies" EntityType="VanmeModel.Company" />
+          <AssociationSet Name="FK_Company_Company" Association="VanmeModel.FK_Company_Company">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Company" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OwnProduct_Company" Association="VanmeModel.FK_OwnProduct_Company">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="OwnProduct" EntitySet="OwnProducts" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK_OwnProduct_ProductType">
           <End Type="VanmeModel.ProductType" Role="ProductType" Multiplicity="0..1" />
@@ -680,6 +682,60 @@
             </Principal>
             <Dependent Role="OwnProduct">
               <PropertyRef Name="ProductType_Id_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Pass" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MacAdress" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="StartNumber" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="Manufacture" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="StreetAddress" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="AddressLine2" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="StateProvinceRegion" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="ZipPostlCode" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Country_Id_fk" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Country" Relationship="VanmeModel.FK_Company_Company" FromRole="Company" ToRole="Country" />
+          <NavigationProperty Name="OwnProducts" Relationship="VanmeModel.FK_OwnProduct_Company" FromRole="Company" ToRole="OwnProduct" />
+        </EntityType>
+        <Association Name="FK_Company_Company">
+          <End Type="VanmeModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="VanmeModel.Company" Role="Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="Country_Id_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OwnProduct_Company">
+          <End Type="VanmeModel.Company" Role="Company" Multiplicity="0..1" />
+          <End Type="VanmeModel.OwnProduct" Role="OwnProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OwnProduct">
+              <PropertyRef Name="Company_Id_fk" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -734,25 +790,6 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="PantoneNumber" ColumnName="PantoneNumber" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Companies">
-            <EntityTypeMapping TypeName="VanmeModel.Company">
-              <MappingFragment StoreEntitySet="Company">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-                <ScalarProperty Name="Manufacture" ColumnName="Manufacture" />
-                <ScalarProperty Name="Website" ColumnName="Website" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
-                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="StateProvinceRegion" ColumnName="StateProvinceRegion" />
-                <ScalarProperty Name="ZipPostlCode" ColumnName="ZipPostlCode" />
-                <ScalarProperty Name="Country_Id_fk" ColumnName="Country_Id_fk" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="FAX" ColumnName="FAX" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -834,6 +871,36 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="VanmeModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="StartNumber" ColumnName="StartNumber" />
+                <ScalarProperty Name="MacAdress" ColumnName="MacAdress" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="VanmeModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Country_Id_fk" ColumnName="Country_Id_fk" />
+                <ScalarProperty Name="ZipPostlCode" ColumnName="ZipPostlCode" />
+                <ScalarProperty Name="StateProvinceRegion" ColumnName="StateProvinceRegion" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Manufacture" ColumnName="Manufacture" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

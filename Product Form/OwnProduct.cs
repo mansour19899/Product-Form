@@ -59,5 +59,6 @@ namespace Product_Form
         public virtual ICollection<Image> Images { get; set; }
         public virtual Material Material { get; set; }
         public virtual ProductType ProductType { get; set; }
+        public virtual Company Company { get; set; }
     }
 }

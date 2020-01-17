@@ -31,6 +31,26 @@ namespace Product_Form
             var list = db.Countries.ToList();
             return list;
         }
+        public List<Category> categories()
+        {
+            var list = db.Categories.ToList();
+            return list;
+        }
 
+        public List<SubCategory> subCategories()
+        {
+            var list = db.SubCategories.ToList();
+            return list;
+        }
+        public List<ProductType> productTypes()
+        {
+            var list = db.ProductTypes.ToList();
+            return list;
+        }
+        public List<Brand> brands()
+        {
+            var list = db.Brands.ToList();
+            return list;
+        }
     }
 }

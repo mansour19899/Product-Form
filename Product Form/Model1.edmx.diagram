@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="VanmeModel.CategoriesSubCategory" Width="1.5" PointX="11" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="VanmeModel.Category" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="VanmeModel.Color" Width="1.5" PointX="3.75" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VanmeModel.Company" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="VanmeModel.Country" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="VanmeModel.Image" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="VanmeModel.Material" Width="1.5" PointX="3.75" PointY="15.875" IsExpanded="true" />
@@ -23,11 +22,14 @@
         <AssociationConnector Association="VanmeModel.FK_CategoriesSubCategories_SubCategory" ManuallyRouted="false" />
         <AssociationConnector Association="VanmeModel.FK_ProductType_CategoriesSubCategories" ManuallyRouted="false" />
         <AssociationConnector Association="VanmeModel.FK_Product_Color" ManuallyRouted="false" />
-        <AssociationConnector Association="VanmeModel.FK_Company_Company" ManuallyRouted="false" />
         <AssociationConnector Association="VanmeModel.FK_Product_Country" ManuallyRouted="false" />
         <AssociationConnector Association="VanmeModel.FK_Image_Product" ManuallyRouted="false" />
         <AssociationConnector Association="VanmeModel.FK_Product_Materials" ManuallyRouted="false" />
         <AssociationConnector Association="VanmeModel.FK_OwnProduct_ProductType" />
+        <EntityTypeShape EntityType="VanmeModel.User" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VanmeModel.Company" Width="1.5" PointX="3.75" PointY="5.5" />
+        <AssociationConnector Association="VanmeModel.FK_Company_Company" />
+        <AssociationConnector Association="VanmeModel.FK_OwnProduct_Company" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

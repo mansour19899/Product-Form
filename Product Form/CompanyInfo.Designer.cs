@@ -57,11 +57,11 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cmbBrand = new System.Windows.Forms.ComboBox();
+            this.cmbProductType = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbSubCategory = new System.Windows.Forms.ComboBox();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.cmbCountryofOrgin = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -128,6 +128,8 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -456,11 +458,13 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.comboBox6);
-            this.panel2.Controls.Add(this.comboBox5);
+            this.panel2.Controls.Add(this.label25);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.cmbBrand);
+            this.panel2.Controls.Add(this.cmbProductType);
             this.panel2.Controls.Add(this.label24);
-            this.panel2.Controls.Add(this.comboBox4);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.cmbSubCategory);
+            this.panel2.Controls.Add(this.cmbCategory);
             this.panel2.Controls.Add(this.cmbCountryofOrgin);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label15);
@@ -491,31 +495,31 @@
             this.panel2.Visible = false;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // comboBox6
+            // cmbBrand
             // 
-            this.comboBox6.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.cmbBrand.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.cmbBrand.FormattingEnabled = true;
+            this.cmbBrand.Items.AddRange(new object[] {
             "UPC",
             "YAN"});
-            this.comboBox6.Location = new System.Drawing.Point(80, 251);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(660, 39);
-            this.comboBox6.TabIndex = 68;
+            this.cmbBrand.Location = new System.Drawing.Point(80, 251);
+            this.cmbBrand.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbBrand.Name = "cmbBrand";
+            this.cmbBrand.Size = new System.Drawing.Size(660, 39);
+            this.cmbBrand.TabIndex = 68;
             // 
-            // comboBox5
+            // cmbProductType
             // 
-            this.comboBox5.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.cmbProductType.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.cmbProductType.FormattingEnabled = true;
+            this.cmbProductType.Items.AddRange(new object[] {
             "UPC",
             "YAN"});
-            this.comboBox5.Location = new System.Drawing.Point(82, 146);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(660, 39);
-            this.comboBox5.TabIndex = 67;
+            this.cmbProductType.Location = new System.Drawing.Point(82, 146);
+            this.cmbProductType.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbProductType.Name = "cmbProductType";
+            this.cmbProductType.Size = new System.Drawing.Size(660, 39);
+            this.cmbProductType.TabIndex = 67;
             // 
             // label24
             // 
@@ -528,31 +532,31 @@
             this.label24.TabIndex = 66;
             this.label24.Text = "Product Type";
             // 
-            // comboBox4
+            // cmbSubCategory
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cmbSubCategory.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.cmbSubCategory.FormattingEnabled = true;
+            this.cmbSubCategory.Items.AddRange(new object[] {
             "UPC",
             "YAN"});
-            this.comboBox4.Location = new System.Drawing.Point(886, 51);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(672, 39);
-            this.comboBox4.TabIndex = 65;
+            this.cmbSubCategory.Location = new System.Drawing.Point(886, 51);
+            this.cmbSubCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbSubCategory.Name = "cmbSubCategory";
+            this.cmbSubCategory.Size = new System.Drawing.Size(672, 39);
+            this.cmbSubCategory.TabIndex = 65;
             // 
-            // comboBox2
+            // cmbCategory
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbCategory.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Items.AddRange(new object[] {
             "UPC",
             "YAN"});
-            this.comboBox2.Location = new System.Drawing.Point(80, 51);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(660, 39);
-            this.comboBox2.TabIndex = 64;
+            this.cmbCategory.Location = new System.Drawing.Point(80, 51);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(660, 39);
+            this.cmbCategory.TabIndex = 64;
             // 
             // cmbCountryofOrgin
             // 
@@ -599,7 +603,7 @@
             // 
             // btnCheckPrice
             // 
-            this.btnCheckPrice.Location = new System.Drawing.Point(1367, 562);
+            this.btnCheckPrice.Location = new System.Drawing.Point(1366, 600);
             this.btnCheckPrice.Name = "btnCheckPrice";
             this.btnCheckPrice.Size = new System.Drawing.Size(120, 38);
             this.btnCheckPrice.TabIndex = 58;
@@ -614,7 +618,7 @@
             this.comboBox3.Items.AddRange(new object[] {
             "UPC",
             "YAN"});
-            this.comboBox3.Location = new System.Drawing.Point(675, 442);
+            this.comboBox3.Location = new System.Drawing.Point(1481, 532);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(77, 39);
@@ -647,7 +651,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label31.Location = new System.Drawing.Point(671, 400);
+            this.label31.Location = new System.Drawing.Point(1477, 490);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(81, 38);
@@ -658,7 +662,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label17.Location = new System.Drawing.Point(993, 560);
+            this.label17.Location = new System.Drawing.Point(992, 598);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(78, 38);
@@ -668,7 +672,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.txtPrice.Location = new System.Drawing.Point(1079, 562);
+            this.txtPrice.Location = new System.Drawing.Point(1078, 600);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(264, 38);
@@ -733,17 +737,17 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label19.Location = new System.Drawing.Point(80, 390);
+            this.label19.Location = new System.Drawing.Point(886, 480);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(67, 38);
             this.label19.TabIndex = 33;
-            this.label19.Text = "SKU";
+            this.label19.Text = "UPS";
             // 
             // textBox16
             // 
             this.textBox16.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox16.Location = new System.Drawing.Point(82, 443);
+            this.textBox16.Location = new System.Drawing.Point(888, 533);
             this.textBox16.Margin = new System.Windows.Forms.Padding(4);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(577, 38);
@@ -1350,13 +1354,34 @@
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 16.2F);
+            this.label25.Location = new System.Drawing.Point(65, 395);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label25.Size = new System.Drawing.Size(84, 48);
+            this.label25.TabIndex = 70;
+            this.label25.Text = "SKU";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.textBox1.Location = new System.Drawing.Point(72, 443);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(675, 38);
+            this.textBox1.TabIndex = 69;
+            // 
             // CompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1755, 948);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlCheckList);
             this.Controls.Add(this.btnNext);
@@ -1490,10 +1515,12 @@
         private System.Windows.Forms.ComboBox cmbCountryofOrgin;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cmbSubCategory;
+        private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.ComboBox cmbBrand;
+        private System.Windows.Forms.ComboBox cmbProductType;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

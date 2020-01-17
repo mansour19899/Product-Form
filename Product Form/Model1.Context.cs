@@ -30,12 +30,13 @@ namespace Product_Form
         public virtual DbSet<CategoriesSubCategory> CategoriesSubCategories { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Color> Colors { get; set; }
-        public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Material> Materials { get; set; }
         public virtual DbSet<OwnProduct> OwnProducts { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<SubCategory> SubCategories { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Company> Companies { get; set; }
     }
 }

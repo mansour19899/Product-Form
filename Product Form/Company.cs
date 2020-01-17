@@ -14,6 +14,12 @@ namespace Product_Form
     
     public partial class Company
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Company()
+        {
+            this.OwnProducts = new HashSet<OwnProduct>();
+        }
+    
         public int Id { get; set; }
         public string CompanyName { get; set; }
         public string Manufacture { get; set; }
@@ -29,5 +35,7 @@ namespace Product_Form
         public string FAX { get; set; }
     
         public virtual Country Country { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OwnProduct> OwnProducts { get; set; }
     }
 }
