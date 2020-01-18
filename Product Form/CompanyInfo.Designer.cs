@@ -57,6 +57,8 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.cmbBrand = new System.Windows.Forms.ComboBox();
             this.cmbProductType = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -65,11 +67,11 @@
             this.cmbCountryofOrgin = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtProductTittle = new System.Windows.Forms.TextBox();
             this.btnCheckPrice = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.txtDescribeMaterial = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -86,7 +88,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtSpecialPackaing = new System.Windows.Forms.TextBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -98,17 +100,17 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pic_showUpload = new System.Windows.Forms.PictureBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.chkTruck = new System.Windows.Forms.CheckBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.chkTrain = new System.Windows.Forms.CheckBox();
+            this.chkShipTransportation = new System.Windows.Forms.CheckBox();
+            this.ChkAirTransportation = new System.Windows.Forms.CheckBox();
             this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.ChkNoPackaging = new System.Windows.Forms.CheckBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.ChkWrap = new System.Windows.Forms.CheckBox();
+            this.chkBag = new System.Windows.Forms.CheckBox();
+            this.chkBox = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.lblWeight = new System.Windows.Forms.Label();
             this.txtWeight = new System.Windows.Forms.TextBox();
@@ -122,14 +124,12 @@
             this.radioButtonMetric = new System.Windows.Forms.RadioButton();
             this.pnlCheckList = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.chkRestractable = new System.Windows.Forms.CheckBox();
+            this.chkWaterResistance = new System.Windows.Forms.CheckBox();
+            this.chkExpandable = new System.Windows.Forms.CheckBox();
+            this.chkCheckPoint = new System.Windows.Forms.CheckBox();
+            this.chkTSA = new System.Windows.Forms.CheckBox();
+            this.chkRFID = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -468,11 +468,11 @@
             this.panel2.Controls.Add(this.cmbCountryofOrgin);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.textBox12);
+            this.panel2.Controls.Add(this.txtProductTittle);
             this.panel2.Controls.Add(this.btnCheckPrice);
             this.panel2.Controls.Add(this.comboBox3);
             this.panel2.Controls.Add(this.label32);
-            this.panel2.Controls.Add(this.textBox27);
+            this.panel2.Controls.Add(this.txtDescribeMaterial);
             this.panel2.Controls.Add(this.label31);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.txtPrice);
@@ -494,6 +494,27 @@
             this.panel2.TabIndex = 27;
             this.panel2.Visible = false;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 16.2F);
+            this.label25.Location = new System.Drawing.Point(65, 395);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label25.Size = new System.Drawing.Size(67, 38);
+            this.label25.TabIndex = 70;
+            this.label25.Text = "SKU";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.textBox1.Location = new System.Drawing.Point(72, 443);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(675, 38);
+            this.textBox1.TabIndex = 69;
             // 
             // cmbBrand
             // 
@@ -592,14 +613,14 @@
             this.label15.TabIndex = 61;
             this.label15.Text = "Product Tittle";
             // 
-            // textBox12
+            // txtProductTittle
             // 
-            this.textBox12.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox12.Location = new System.Drawing.Point(886, 146);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(670, 38);
-            this.textBox12.TabIndex = 59;
+            this.txtProductTittle.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.txtProductTittle.Location = new System.Drawing.Point(886, 146);
+            this.txtProductTittle.Margin = new System.Windows.Forms.Padding(4);
+            this.txtProductTittle.Name = "txtProductTittle";
+            this.txtProductTittle.Size = new System.Drawing.Size(670, 38);
+            this.txtProductTittle.TabIndex = 59;
             // 
             // btnCheckPrice
             // 
@@ -635,17 +656,17 @@
             this.label32.TabIndex = 56;
             this.label32.Text = "Describe Material";
             // 
-            // textBox27
+            // txtDescribeMaterial
             // 
-            this.textBox27.AllowDrop = true;
-            this.textBox27.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox27.Location = new System.Drawing.Point(61, 550);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox27.Multiline = true;
-            this.textBox27.Name = "textBox27";
-            this.textBox27.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox27.Size = new System.Drawing.Size(655, 119);
-            this.textBox27.TabIndex = 38;
+            this.txtDescribeMaterial.AllowDrop = true;
+            this.txtDescribeMaterial.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.txtDescribeMaterial.Location = new System.Drawing.Point(61, 550);
+            this.txtDescribeMaterial.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescribeMaterial.Multiline = true;
+            this.txtDescribeMaterial.Name = "txtDescribeMaterial";
+            this.txtDescribeMaterial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescribeMaterial.Size = new System.Drawing.Size(655, 119);
+            this.txtDescribeMaterial.TabIndex = 38;
             // 
             // label31
             // 
@@ -809,7 +830,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.textBox13);
+            this.panel3.Controls.Add(this.txtSpecialPackaing);
             this.panel3.Controls.Add(this.pictureBox9);
             this.panel3.Controls.Add(this.pictureBox8);
             this.panel3.Controls.Add(this.pictureBox7);
@@ -821,17 +842,17 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.pic_showUpload);
-            this.panel3.Controls.Add(this.checkBox12);
+            this.panel3.Controls.Add(this.chkTruck);
             this.panel3.Controls.Add(this.label30);
-            this.panel3.Controls.Add(this.checkBox13);
-            this.panel3.Controls.Add(this.checkBox14);
-            this.panel3.Controls.Add(this.checkBox15);
+            this.panel3.Controls.Add(this.chkTrain);
+            this.panel3.Controls.Add(this.chkShipTransportation);
+            this.panel3.Controls.Add(this.ChkAirTransportation);
             this.panel3.Controls.Add(this.checkBox16);
-            this.panel3.Controls.Add(this.checkBox11);
+            this.panel3.Controls.Add(this.ChkNoPackaging);
             this.panel3.Controls.Add(this.label29);
-            this.panel3.Controls.Add(this.checkBox10);
-            this.panel3.Controls.Add(this.checkBox9);
-            this.panel3.Controls.Add(this.checkBox8);
+            this.panel3.Controls.Add(this.ChkWrap);
+            this.panel3.Controls.Add(this.chkBag);
+            this.panel3.Controls.Add(this.chkBox);
             this.panel3.Controls.Add(this.checkBox7);
             this.panel3.Controls.Add(this.lblWeight);
             this.panel3.Controls.Add(this.txtWeight);
@@ -860,17 +881,17 @@
             this.label16.TabIndex = 72;
             this.label16.Text = "Special Packaging Instructions";
             // 
-            // textBox13
+            // txtSpecialPackaing
             // 
-            this.textBox13.AllowDrop = true;
-            this.textBox13.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox13.Location = new System.Drawing.Point(1041, 558);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox13.Multiline = true;
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox13.Size = new System.Drawing.Size(655, 119);
-            this.textBox13.TabIndex = 71;
+            this.txtSpecialPackaing.AllowDrop = true;
+            this.txtSpecialPackaing.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.txtSpecialPackaing.Location = new System.Drawing.Point(1041, 558);
+            this.txtSpecialPackaing.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSpecialPackaing.Multiline = true;
+            this.txtSpecialPackaing.Name = "txtSpecialPackaing";
+            this.txtSpecialPackaing.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSpecialPackaing.Size = new System.Drawing.Size(655, 119);
+            this.txtSpecialPackaing.TabIndex = 71;
             // 
             // pictureBox9
             // 
@@ -984,18 +1005,18 @@
             this.pic_showUpload.TabIndex = 60;
             this.pic_showUpload.TabStop = false;
             // 
-            // checkBox12
+            // chkTruck
             // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox12.Location = new System.Drawing.Point(647, 621);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(85, 33);
-            this.checkBox12.TabIndex = 59;
-            this.checkBox12.Text = "Truck";
-            this.checkBox12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox12.UseVisualStyleBackColor = true;
+            this.chkTruck.AutoSize = true;
+            this.chkTruck.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTruck.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkTruck.Location = new System.Drawing.Point(647, 621);
+            this.chkTruck.Name = "chkTruck";
+            this.chkTruck.Size = new System.Drawing.Size(85, 33);
+            this.chkTruck.TabIndex = 59;
+            this.chkTruck.Text = "Truck";
+            this.chkTruck.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkTruck.UseVisualStyleBackColor = true;
             // 
             // label30
             // 
@@ -1008,44 +1029,44 @@
             this.label30.TabIndex = 58;
             this.label30.Text = "Shipping Method";
             // 
-            // checkBox13
+            // chkTrain
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox13.Location = new System.Drawing.Point(561, 621);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(80, 33);
-            this.checkBox13.TabIndex = 57;
-            this.checkBox13.Text = "Train";
-            this.checkBox13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.chkTrain.AutoSize = true;
+            this.chkTrain.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTrain.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkTrain.Location = new System.Drawing.Point(561, 621);
+            this.chkTrain.Name = "chkTrain";
+            this.chkTrain.Size = new System.Drawing.Size(80, 33);
+            this.chkTrain.TabIndex = 57;
+            this.chkTrain.Text = "Train";
+            this.chkTrain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkTrain.UseVisualStyleBackColor = true;
             // 
-            // checkBox14
+            // chkShipTransportation
             // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox14.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox14.Location = new System.Drawing.Point(349, 621);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(206, 33);
-            this.checkBox14.TabIndex = 56;
-            this.checkBox14.Text = "Ship Transportation";
-            this.checkBox14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox14.UseVisualStyleBackColor = true;
+            this.chkShipTransportation.AutoSize = true;
+            this.chkShipTransportation.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShipTransportation.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkShipTransportation.Location = new System.Drawing.Point(349, 621);
+            this.chkShipTransportation.Name = "chkShipTransportation";
+            this.chkShipTransportation.Size = new System.Drawing.Size(206, 33);
+            this.chkShipTransportation.TabIndex = 56;
+            this.chkShipTransportation.Text = "Ship Transportation";
+            this.chkShipTransportation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkShipTransportation.UseVisualStyleBackColor = true;
             // 
-            // checkBox15
+            // ChkAirTransportation
             // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox15.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox15.Location = new System.Drawing.Point(161, 621);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(182, 33);
-            this.checkBox15.TabIndex = 55;
-            this.checkBox15.Text = "air transportation";
-            this.checkBox15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox15.UseVisualStyleBackColor = true;
+            this.ChkAirTransportation.AutoSize = true;
+            this.ChkAirTransportation.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkAirTransportation.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ChkAirTransportation.Location = new System.Drawing.Point(161, 621);
+            this.ChkAirTransportation.Name = "ChkAirTransportation";
+            this.ChkAirTransportation.Size = new System.Drawing.Size(182, 33);
+            this.ChkAirTransportation.TabIndex = 55;
+            this.ChkAirTransportation.Text = "air transportation";
+            this.ChkAirTransportation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ChkAirTransportation.UseVisualStyleBackColor = true;
             // 
             // checkBox16
             // 
@@ -1060,18 +1081,18 @@
             this.checkBox16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox16.UseVisualStyleBackColor = true;
             // 
-            // checkBox11
+            // ChkNoPackaging
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox11.Location = new System.Drawing.Point(498, 538);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(157, 33);
-            this.checkBox11.TabIndex = 53;
-            this.checkBox11.Text = "No Packaging";
-            this.checkBox11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.ChkNoPackaging.AutoSize = true;
+            this.ChkNoPackaging.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkNoPackaging.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ChkNoPackaging.Location = new System.Drawing.Point(498, 538);
+            this.ChkNoPackaging.Name = "ChkNoPackaging";
+            this.ChkNoPackaging.Size = new System.Drawing.Size(157, 33);
+            this.ChkNoPackaging.TabIndex = 53;
+            this.ChkNoPackaging.Text = "No Packaging";
+            this.ChkNoPackaging.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ChkNoPackaging.UseVisualStyleBackColor = true;
             // 
             // label29
             // 
@@ -1084,44 +1105,44 @@
             this.label29.TabIndex = 52;
             this.label29.Text = "Shipping Method";
             // 
-            // checkBox10
+            // ChkWrap
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox10.Location = new System.Drawing.Point(401, 538);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(83, 33);
-            this.checkBox10.TabIndex = 51;
-            this.checkBox10.Text = "Wrap";
-            this.checkBox10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.ChkWrap.AutoSize = true;
+            this.ChkWrap.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkWrap.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ChkWrap.Location = new System.Drawing.Point(401, 538);
+            this.ChkWrap.Name = "ChkWrap";
+            this.ChkWrap.Size = new System.Drawing.Size(83, 33);
+            this.ChkWrap.TabIndex = 51;
+            this.ChkWrap.Text = "Wrap";
+            this.ChkWrap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ChkWrap.UseVisualStyleBackColor = true;
             // 
-            // checkBox9
+            // chkBag
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox9.Location = new System.Drawing.Point(293, 538);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(70, 33);
-            this.checkBox9.TabIndex = 50;
-            this.checkBox9.Text = "Bag";
-            this.checkBox9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.chkBag.AutoSize = true;
+            this.chkBag.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkBag.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkBag.Location = new System.Drawing.Point(293, 538);
+            this.chkBag.Name = "chkBag";
+            this.chkBag.Size = new System.Drawing.Size(70, 33);
+            this.chkBag.TabIndex = 50;
+            this.chkBag.Text = "Bag";
+            this.chkBag.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkBag.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // chkBox
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox8.Location = new System.Drawing.Point(190, 538);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(69, 33);
-            this.checkBox8.TabIndex = 49;
-            this.checkBox8.Text = "Box";
-            this.checkBox8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.chkBox.AutoSize = true;
+            this.chkBox.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkBox.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkBox.Location = new System.Drawing.Point(190, 538);
+            this.chkBox.Name = "chkBox";
+            this.chkBox.Size = new System.Drawing.Size(69, 33);
+            this.chkBox.TabIndex = 49;
+            this.chkBox.Text = "Box";
+            this.chkBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkBox.UseVisualStyleBackColor = true;
             // 
             // checkBox7
             // 
@@ -1253,13 +1274,13 @@
             // pnlCheckList
             // 
             this.pnlCheckList.Controls.Add(this.button2);
-            this.pnlCheckList.Controls.Add(this.checkBox6);
-            this.pnlCheckList.Controls.Add(this.checkBox5);
-            this.pnlCheckList.Controls.Add(this.checkBox4);
-            this.pnlCheckList.Controls.Add(this.checkBox3);
-            this.pnlCheckList.Controls.Add(this.checkBox2);
-            this.pnlCheckList.Controls.Add(this.checkBox1);
-            this.pnlCheckList.Location = new System.Drawing.Point(15, 81);
+            this.pnlCheckList.Controls.Add(this.chkRestractable);
+            this.pnlCheckList.Controls.Add(this.chkWaterResistance);
+            this.pnlCheckList.Controls.Add(this.chkExpandable);
+            this.pnlCheckList.Controls.Add(this.chkCheckPoint);
+            this.pnlCheckList.Controls.Add(this.chkTSA);
+            this.pnlCheckList.Controls.Add(this.chkRFID);
+            this.pnlCheckList.Location = new System.Drawing.Point(15, 78);
             this.pnlCheckList.Name = "pnlCheckList";
             this.pnlCheckList.Size = new System.Drawing.Size(1730, 689);
             this.pnlCheckList.TabIndex = 29;
@@ -1276,104 +1297,83 @@
             this.button2.Text = "Next";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // chkRestractable
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox6.Location = new System.Drawing.Point(1200, 252);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(199, 33);
-            this.checkBox6.TabIndex = 43;
-            this.checkBox6.Text = "Retractable handle";
-            this.checkBox6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chkRestractable.AutoSize = true;
+            this.chkRestractable.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRestractable.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkRestractable.Location = new System.Drawing.Point(1200, 252);
+            this.chkRestractable.Name = "chkRestractable";
+            this.chkRestractable.Size = new System.Drawing.Size(199, 33);
+            this.chkRestractable.TabIndex = 43;
+            this.chkRestractable.Text = "Retractable handle";
+            this.chkRestractable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkRestractable.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // chkWaterResistance
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox5.Location = new System.Drawing.Point(817, 256);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(184, 33);
-            this.checkBox5.TabIndex = 42;
-            this.checkBox5.Text = "Water Resistanct";
-            this.checkBox5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkWaterResistance.AutoSize = true;
+            this.chkWaterResistance.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkWaterResistance.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkWaterResistance.Location = new System.Drawing.Point(817, 256);
+            this.chkWaterResistance.Name = "chkWaterResistance";
+            this.chkWaterResistance.Size = new System.Drawing.Size(184, 33);
+            this.chkWaterResistance.TabIndex = 42;
+            this.chkWaterResistance.Text = "Water Resistanct";
+            this.chkWaterResistance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkWaterResistance.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkExpandable
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox4.Location = new System.Drawing.Point(168, 245);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(139, 33);
-            this.checkBox4.TabIndex = 41;
-            this.checkBox4.Text = "Expandable";
-            this.checkBox4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkExpandable.AutoSize = true;
+            this.chkExpandable.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkExpandable.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkExpandable.Location = new System.Drawing.Point(168, 245);
+            this.chkExpandable.Name = "chkExpandable";
+            this.chkExpandable.Size = new System.Drawing.Size(139, 33);
+            this.chkExpandable.TabIndex = 41;
+            this.chkExpandable.Text = "Expandable";
+            this.chkExpandable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkExpandable.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkCheckPoint
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox3.Location = new System.Drawing.Point(1200, 175);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(207, 33);
-            this.checkBox3.TabIndex = 40;
-            this.checkBox3.Text = "Checkpoint Friendly";
-            this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkCheckPoint.AutoSize = true;
+            this.chkCheckPoint.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCheckPoint.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkCheckPoint.Location = new System.Drawing.Point(1200, 175);
+            this.chkCheckPoint.Name = "chkCheckPoint";
+            this.chkCheckPoint.Size = new System.Drawing.Size(207, 33);
+            this.chkCheckPoint.TabIndex = 40;
+            this.chkCheckPoint.Text = "Checkpoint Friendly";
+            this.chkCheckPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkCheckPoint.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkTSA
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox2.Location = new System.Drawing.Point(817, 175);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(209, 33);
-            this.checkBox2.TabIndex = 39;
-            this.checkBox2.Text = "TSA Approved Lock";
-            this.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkTSA.AutoSize = true;
+            this.chkTSA.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTSA.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkTSA.Location = new System.Drawing.Point(817, 175);
+            this.chkTSA.Name = "chkTSA";
+            this.chkTSA.Size = new System.Drawing.Size(209, 33);
+            this.chkTSA.TabIndex = 39;
+            this.chkTSA.Text = "TSA Approved Lock";
+            this.chkTSA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkTSA.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkRFID
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox1.Location = new System.Drawing.Point(168, 175);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(168, 33);
-            this.checkBox1.TabIndex = 38;
-            this.checkBox1.Text = "RFID Protected";
-            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.label25.Location = new System.Drawing.Point(65, 395);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label25.Size = new System.Drawing.Size(84, 48);
-            this.label25.TabIndex = 70;
-            this.label25.Text = "SKU";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox1.Location = new System.Drawing.Point(72, 443);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(675, 38);
-            this.textBox1.TabIndex = 69;
+            this.chkRFID.AutoSize = true;
+            this.chkRFID.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRFID.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkRFID.Location = new System.Drawing.Point(168, 175);
+            this.chkRFID.Name = "chkRFID";
+            this.chkRFID.Size = new System.Drawing.Size(168, 33);
+            this.chkRFID.TabIndex = 38;
+            this.chkRFID.Text = "RFID Protected";
+            this.chkRFID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkRFID.UseVisualStyleBackColor = true;
             // 
             // CompanyInfo
             // 
@@ -1381,9 +1381,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1755, 948);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlCheckList);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblHeaders);
@@ -1460,17 +1460,17 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.CheckBox checkBox12;
+        private System.Windows.Forms.CheckBox chkTruck;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.CheckBox checkBox15;
+        private System.Windows.Forms.CheckBox chkTrain;
+        private System.Windows.Forms.CheckBox chkShipTransportation;
+        private System.Windows.Forms.CheckBox ChkAirTransportation;
         private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.CheckBox ChkNoPackaging;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox ChkWrap;
+        private System.Windows.Forms.CheckBox chkBag;
+        private System.Windows.Forms.CheckBox chkBox;
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.Label lblWeight;
         private System.Windows.Forms.TextBox txtWeight;
@@ -1485,7 +1485,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAdressline2;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox txtDescribeMaterial;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button button1;
@@ -1502,19 +1502,19 @@
         private System.Windows.Forms.Button btnCheckPrice;
         private System.Windows.Forms.Panel pnlCheckList;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkRestractable;
+        private System.Windows.Forms.CheckBox chkWaterResistance;
+        private System.Windows.Forms.CheckBox chkExpandable;
+        private System.Windows.Forms.CheckBox chkCheckPoint;
+        private System.Windows.Forms.CheckBox chkTSA;
+        private System.Windows.Forms.CheckBox chkRFID;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtProductTittle;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox cmbCountryofOrgin;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtSpecialPackaing;
         private System.Windows.Forms.ComboBox cmbSubCategory;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.ComboBox cmbBrand;

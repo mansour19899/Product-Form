@@ -382,7 +382,7 @@ namespace Product_Form
             company.City = txtCity.Text;
             company.StateProvinceRegion = txtStateProvince.Text;
             company.ZipPostlCode = txtZipPostalcode.Text;
-            company.Country_Id_fk = cmbCountry.SelectedIndex + 1;
+            company.Country_Id_fk = Convert.ToInt16(cmbCountry.SelectedValue.ToString());
             company.Phone = txtPhone.Text;
             company.FAX = txtFax.Text;
             bool CansaveCompany = db.Companies.Any(p => p.CompanyName == company.CompanyName);
@@ -394,7 +394,41 @@ namespace Product_Form
             
 
             OwnProduct product = new OwnProduct();
-            
+            product.Id = newProductId;
+            product.ProductType_Id_fk = Convert.ToInt16(cmbProductType.SelectedValue.ToString());
+            product.ProductTittle = txtProductTittle.Text;
+            product.Color_Id_fk = Convert.ToInt16(cmbcolors.SelectedValue.ToString());
+            product.Material_Id_fk = Convert.ToInt16(cmbMaterial.SelectedValue.ToString());
+            product.Brand_Id_fk= Convert.ToInt16(cmbBrand.SelectedValue.ToString());
+            product.CountryofOrgin_Id_fk= Convert.ToInt16(cmbCountry.SelectedValue.ToString());
+            product.Box = chkBox.Checked;
+            product.Bag = chkBag.Checked;
+            product.Wrap = ChkWrap.Checked;
+            product.NoPackaging = ChkNoPackaging.Checked;
+            product.AirTransportation = ChkAirTransportation.Checked;
+            product.ShipTransportation = chkShipTransportation.Checked;
+            product.Train = chkTrain.Checked;
+            product.Truck = chkTruck.Checked;
+            product.Width =float.Parse( txtWidth.Text);
+            product.Depth= float.Parse(txtDepth.Text);
+            product.Height = float.Parse(txtHeight.Text);
+            product.Weight = float.Parse(txtWeight.Text);
+            product.SpecialPackingInstructions = txtSpecialPackaing.Text;
+            product.Price= float.Parse(txtPrice.Text);
+            product.RFIDProtected = chkRFID.Checked;
+            product.TSAApprovedLock = chkTSA.Checked;
+            product.Expandable = chkExpandable.Checked;
+            product.WaterResistance = chkWaterResistance.Checked;
+            product.RetractableHandle = chkRestractable.Checked;
+            product.Company_Id_fk = company.Id ;
+            product.DescribeMaterial = txtDescribeMaterial.Text;
+            product.CheckPointFriendly = chkCheckPoint.Checked;
+
+            db.OwnProducts.Add(product);
+            db.SaveChanges();
+
+
+            int x = 0;
 
         }
         public void InsertDeveloperProduct()
