@@ -431,6 +431,7 @@
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(659, 38);
             this.txtCompany.TabIndex = 24;
+            this.txtCompany.Leave += new System.EventHandler(this.txtCompany_Leave);
             // 
             // btnBack
             // 
@@ -506,6 +507,7 @@
             this.label25.Size = new System.Drawing.Size(67, 38);
             this.label25.TabIndex = 70;
             this.label25.Text = "SKU";
+            this.label25.Visible = false;
             // 
             // textBox1
             // 
@@ -515,6 +517,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(675, 38);
             this.textBox1.TabIndex = 69;
+            this.textBox1.Visible = false;
             // 
             // cmbBrand
             // 
@@ -565,6 +568,7 @@
             this.cmbSubCategory.Name = "cmbSubCategory";
             this.cmbSubCategory.Size = new System.Drawing.Size(672, 39);
             this.cmbSubCategory.TabIndex = 65;
+            this.cmbSubCategory.SelectedIndexChanged += new System.EventHandler(this.cmbSubCategory_SelectedIndexChanged);
             // 
             // cmbCategory
             // 
@@ -578,6 +582,7 @@
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(660, 39);
             this.cmbCategory.TabIndex = 64;
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // cmbCountryofOrgin
             // 
@@ -644,6 +649,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(77, 39);
             this.comboBox3.TabIndex = 57;
+            this.comboBox3.Visible = false;
             // 
             // label32
             // 
@@ -678,6 +684,7 @@
             this.label31.Size = new System.Drawing.Size(81, 38);
             this.label31.TabIndex = 54;
             this.label31.Text = "Code";
+            this.label31.Visible = false;
             // 
             // label17
             // 
@@ -764,6 +771,7 @@
             this.label19.Size = new System.Drawing.Size(67, 38);
             this.label19.TabIndex = 33;
             this.label19.Text = "UPS";
+            this.label19.Visible = false;
             // 
             // textBox16
             // 
@@ -773,6 +781,7 @@
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(577, 38);
             this.textBox16.TabIndex = 28;
+            this.textBox16.Visible = false;
             // 
             // label20
             // 
@@ -784,6 +793,7 @@
             this.label20.Size = new System.Drawing.Size(186, 38);
             this.label20.TabIndex = 31;
             this.label20.Text = "Style Number";
+            this.label20.Visible = false;
             // 
             // textBox17
             // 
@@ -793,6 +803,7 @@
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(675, 38);
             this.textBox17.TabIndex = 27;
+            this.textBox17.Visible = false;
             // 
             // label21
             // 
@@ -1381,9 +1392,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1755, 948);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlCheckList);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblHeaders);

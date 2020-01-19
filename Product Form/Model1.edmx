@@ -53,18 +53,18 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="CompanyName" Type="nchar" MaxLength="40" />
-          <Property Name="Manufacture" Type="nchar" MaxLength="30" />
-          <Property Name="Website" Type="nchar" MaxLength="40" />
-          <Property Name="Email" Type="nchar" MaxLength="30" />
-          <Property Name="StreetAddress" Type="nchar" MaxLength="30" />
-          <Property Name="AddressLine2" Type="nchar" MaxLength="30" />
-          <Property Name="City" Type="nchar" MaxLength="30" />
-          <Property Name="StateProvinceRegion" Type="nchar" MaxLength="30" />
-          <Property Name="ZipPostlCode" Type="nchar" MaxLength="30" />
+          <Property Name="CompanyName" Type="nchar" MaxLength="100" />
+          <Property Name="Manufacture" Type="nchar" MaxLength="100" />
+          <Property Name="Website" Type="nchar" MaxLength="100" />
+          <Property Name="Email" Type="nchar" MaxLength="50" />
+          <Property Name="StreetAddress" Type="nchar" MaxLength="100" />
+          <Property Name="AddressLine2" Type="nchar" MaxLength="100" />
+          <Property Name="City" Type="nchar" MaxLength="50" />
+          <Property Name="StateProvinceRegion" Type="nchar" MaxLength="50" />
+          <Property Name="ZipPostlCode" Type="nchar" MaxLength="20" />
           <Property Name="Country_Id_fk" Type="int" Nullable="false" />
-          <Property Name="Phone" Type="nchar" MaxLength="30" />
-          <Property Name="FAX" Type="nchar" MaxLength="30" />
+          <Property Name="Phone" Type="nchar" MaxLength="100" />
+          <Property Name="FAX" Type="nchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
@@ -700,18 +700,18 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="CompanyName" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
-          <Property Name="Manufacture" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="Website" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="StreetAddress" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="AddressLine2" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="City" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="StateProvinceRegion" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="ZipPostlCode" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Manufacture" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="StreetAddress" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="AddressLine2" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="StateProvinceRegion" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="ZipPostlCode" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="Country_Id_fk" Type="Int32" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="FAX" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Country" Relationship="VanmeModel.FK_Company_Company" FromRole="Company" ToRole="Country" />
           <NavigationProperty Name="OwnProducts" Relationship="VanmeModel.FK_OwnProduct_Company" FromRole="Company" ToRole="OwnProduct" />
         </EntityType>

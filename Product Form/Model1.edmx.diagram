@@ -27,10 +27,10 @@
         <AssociationConnector Association="VanmeModel.FK_Product_Materials" ManuallyRouted="false" />
         <AssociationConnector Association="VanmeModel.FK_OwnProduct_ProductType" />
         <EntityTypeShape EntityType="VanmeModel.User" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="VanmeModel.Company" Width="1.5" PointX="3.75" PointY="5.5" />
+        <EntityTypeShape EntityType="VanmeModel.Company" Width="1.5" PointX="3.375" PointY="6" />
         <AssociationConnector Association="VanmeModel.FK_Company_Company" />
         <AssociationConnector Association="VanmeModel.FK_OwnProduct_Company" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

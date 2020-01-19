@@ -20,10 +20,24 @@ namespace Product_Form
         List<string> UploadedPicturs;
         int step = 0;
         DropDown drop;
-        ConvertMetricInch cvrt;        
+        ConvertMetricInch cvrt;
+        VanmeEntities db;
+        List<Country> ListCountries;
+        List<Category> ListCategories;
+        List<SubCategory> ListSubCategories;
+        List<ProductType> ListProductTypes;
+        List<CategoriesSubCategory> ListCategoriesSubCategories;
+        
         public CompanyInfo()
         {
-            
+            db = new VanmeEntities();
+            ListCountries = db.Countries.ToList();
+            ListCategories = db.Categories.ToList();
+            ListSubCategories = db.SubCategories.ToList();
+            ListProductTypes = db.ProductTypes.ToList();
+            ListCategoriesSubCategories = db.CategoriesSubCategories.ToList();
+
+
             InitializeComponent();
             drop = new DropDown();
             UploadedPicturs = new List<string>();
@@ -60,14 +74,18 @@ namespace Product_Form
             cmbCategory.DataSource = drop.categories();
             cmbCategory.DisplayMember = "Name";
             cmbCategory.ValueMember = "Id";
+            
 
             cmbSubCategory.DataSource = drop.subCategories();
             cmbSubCategory.DisplayMember = "Name";
             cmbSubCategory.ValueMember = "Id";
+            cmbSubCategory.Enabled = false;
 
             cmbProductType.DataSource = drop.productTypes();
             cmbProductType.DisplayMember = "Name";
             cmbProductType.ValueMember = "Id";
+            cmbProductType.Enabled = false;
+
 
             cmbBrand.DataSource = drop.brands();
             cmbBrand.DisplayMember = "Name";
@@ -79,18 +97,27 @@ namespace Product_Form
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panels.ElementAt(step).Hide();
-            step = step + 1;
-            if (step==3)
+            if(!String.IsNullOrWhiteSpace(txtCompany.Text))
             {
-                InsertOwnProduct();
-                this.Close();
+                panels.ElementAt(step).Hide();
+                step = step + 1;
+                if (step == 3)
+                {
+                    InsertOwnProduct();
+                    this.Close();
+                }
+                else
+                {
+                    panels.ElementAt(step).Show();
+                    lblHeaders.Text = headers.ElementAt(step);
+                }
             }
             else
             {
-                panels.ElementAt(step).Show();
-                lblHeaders.Text = headers.ElementAt(step);
+                MessageBox.Show("Enter Company Name");
+                txtCompany.Text = "";
             }
+
 
             
         }
@@ -350,7 +377,6 @@ namespace Product_Form
         public void InsertOwnProduct()
         {
             string mac = GetMACAddress().ToString();
-            VanmeEntities db = new VanmeEntities();
 
             var startId =Convert.ToInt16( db.Users.FirstOrDefault(p => p.MacAdress == mac).StartNumber);
             int EndId = startId + 10000;
@@ -369,63 +395,72 @@ namespace Product_Form
             {
                  newProductId = CreatProductId.Id + 1;
             }
-            
 
-            Company company = new Company();
-            company.Id = newCompanyId;
-            company.CompanyName = txtCompany.Text;
-            company.Manufacture = txtManufacture.Text;
-            company.Website = txtWebSite.Text;
-            company.Email = txtEmail.Text;
-            company.StreetAddress = txtStreetAddress.Text;
-            company.AddressLine2 = txtAdressline2.Text;
-            company.City = txtCity.Text;
-            company.StateProvinceRegion = txtStateProvince.Text;
-            company.ZipPostlCode = txtZipPostalcode.Text;
-            company.Country_Id_fk = Convert.ToInt16(cmbCountry.SelectedValue.ToString());
-            company.Phone = txtPhone.Text;
-            company.FAX = txtFax.Text;
-            bool CansaveCompany = db.Companies.Any(p => p.CompanyName == company.CompanyName);
-            db.Companies.Add(company);
-            if (db.SaveChanges() > 0 & CansaveCompany == false)
-                MessageBox.Show("Sucsess Save   " + company.CompanyName);
-            else
-                MessageBox.Show("Error Db Save Company");
-            
+            try
+            {
 
-            OwnProduct product = new OwnProduct();
-            product.Id = newProductId;
-            product.ProductType_Id_fk = Convert.ToInt16(cmbProductType.SelectedValue.ToString());
-            product.ProductTittle = txtProductTittle.Text;
-            product.Color_Id_fk = Convert.ToInt16(cmbcolors.SelectedValue.ToString());
-            product.Material_Id_fk = Convert.ToInt16(cmbMaterial.SelectedValue.ToString());
-            product.Brand_Id_fk= Convert.ToInt16(cmbBrand.SelectedValue.ToString());
-            product.CountryofOrgin_Id_fk= Convert.ToInt16(cmbCountry.SelectedValue.ToString());
-            product.Box = chkBox.Checked;
-            product.Bag = chkBag.Checked;
-            product.Wrap = ChkWrap.Checked;
-            product.NoPackaging = ChkNoPackaging.Checked;
-            product.AirTransportation = ChkAirTransportation.Checked;
-            product.ShipTransportation = chkShipTransportation.Checked;
-            product.Train = chkTrain.Checked;
-            product.Truck = chkTruck.Checked;
-            product.Width =float.Parse( txtWidth.Text);
-            product.Depth= float.Parse(txtDepth.Text);
-            product.Height = float.Parse(txtHeight.Text);
-            product.Weight = float.Parse(txtWeight.Text);
-            product.SpecialPackingInstructions = txtSpecialPackaing.Text;
-            product.Price= float.Parse(txtPrice.Text);
-            product.RFIDProtected = chkRFID.Checked;
-            product.TSAApprovedLock = chkTSA.Checked;
-            product.Expandable = chkExpandable.Checked;
-            product.WaterResistance = chkWaterResistance.Checked;
-            product.RetractableHandle = chkRestractable.Checked;
-            product.Company_Id_fk = company.Id ;
-            product.DescribeMaterial = txtDescribeMaterial.Text;
-            product.CheckPointFriendly = chkCheckPoint.Checked;
+                Company company = new Company();
+                company.Id = newCompanyId;
+                company.CompanyName = txtCompany.Text;
+                company.Manufacture = txtManufacture.Text;
+                company.Website = txtWebSite.Text;
+                company.Email = txtEmail.Text;
+                company.StreetAddress = txtStreetAddress.Text;
+                company.AddressLine2 = txtAdressline2.Text;
+                company.City = txtCity.Text;
+                company.StateProvinceRegion = txtStateProvince.Text;
+                company.ZipPostlCode = txtZipPostalcode.Text;
+                company.Country_Id_fk = Convert.ToInt16(cmbCountry.SelectedValue.ToString());
+                company.Phone = txtPhone.Text;
+                company.FAX = txtFax.Text;
+                bool CansaveCompany = db.Companies.Any(p => p.CompanyName == company.CompanyName);
+                db.Companies.Add(company);
+                if (db.SaveChanges() > 0 & CansaveCompany == false)
+                    MessageBox.Show("Sucsess Save   " + company.CompanyName);
+                else
+                    MessageBox.Show("Error Db Save Company");
 
-            db.OwnProducts.Add(product);
-            db.SaveChanges();
+
+                //OwnProduct product = new OwnProduct();
+                //product.Id = newProductId;
+                //product.ProductType_Id_fk = Convert.ToInt16(cmbProductType.SelectedValue.ToString());
+                //product.ProductTittle = txtProductTittle.Text;
+                //product.Color_Id_fk = Convert.ToInt16(cmbcolors.SelectedValue.ToString());
+                //product.Material_Id_fk = Convert.ToInt16(cmbMaterial.SelectedValue.ToString());
+                //product.Brand_Id_fk = Convert.ToInt16(cmbBrand.SelectedValue.ToString());
+                //product.CountryofOrgin_Id_fk = Convert.ToInt16(cmbCountry.SelectedValue.ToString());
+                //product.Box = chkBox.Checked;
+                //product.Bag = chkBag.Checked;
+                //product.Wrap = ChkWrap.Checked;
+                //product.NoPackaging = ChkNoPackaging.Checked;
+                //product.AirTransportation = ChkAirTransportation.Checked;
+                //product.ShipTransportation = chkShipTransportation.Checked;
+                //product.Train = chkTrain.Checked;
+                //product.Truck = chkTruck.Checked;
+                //product.Width = float.Parse(txtWidth.Text);
+                //product.Depth = float.Parse(txtDepth.Text);
+                //product.Height = float.Parse(txtHeight.Text);
+                //product.Weight = float.Parse(txtWeight.Text);
+                //product.SpecialPackingInstructions = txtSpecialPackaing.Text;
+                //product.Price = float.Parse(txtPrice.Text);
+                //product.RFIDProtected = chkRFID.Checked;
+                //product.TSAApprovedLock = chkTSA.Checked;
+                //product.Expandable = chkExpandable.Checked;
+                //product.WaterResistance = chkWaterResistance.Checked;
+                //product.RetractableHandle = chkRestractable.Checked;
+                //product.Company_Id_fk = company.Id;
+                //product.DescribeMaterial = txtDescribeMaterial.Text;
+                //product.CheckPointFriendly = chkCheckPoint.Checked;
+
+                //db.OwnProducts.Add(product);
+                //db.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error");
+            }
+           
 
 
             int x = 0;
@@ -448,6 +483,74 @@ namespace Product_Form
                 }
             }
             return sMacAddress;
+        }
+
+        public void txtCompany_Leave(object sender, EventArgs e)
+        {
+            var IsExist = db.Companies.FirstOrDefault(p => p.CompanyName.CompareTo(txtCompany.Text) == 0);
+            if (IsExist!=null)
+            {
+                DialogResult result = MessageBox.Show("This company already exists. Do you want to complate?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    txtCompany.Text = IsExist.CompanyName.Trim();
+                    txtManufacture.Text = IsExist.Manufacture.Trim();
+                    txtWebSite.Text = IsExist.Website.Trim();
+                    txtEmail.Text = IsExist.Email.Trim();
+                    txtStreetAddress.Text = IsExist.StreetAddress.Trim();
+                    txtAdressline2.Text = IsExist.AddressLine2.Trim();
+                    txtCity.Text = IsExist.City.Trim();
+                    txtStateProvince.Text = IsExist.StateProvinceRegion.Trim();
+                    txtZipPostalcode.Text = IsExist.ZipPostlCode.Trim();
+                    txtPhone.Text = IsExist.Phone.Trim();
+                    txtFax.Text = IsExist.FAX.Trim();
+                    cmbCountry.SelectedIndex = IsExist.Country_Id_fk-1;
+
+                }
+                else if (result == DialogResult.No)
+                {
+                    txtCompany.Text = "";
+                }
+                else
+                {
+                    //...
+                }
+            }
+             
+            else
+                MessageBox.Show("nooo");
+        }
+
+        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCategory.SelectedIndex != 0)
+            {
+                var index = Convert.ToInt16( cmbCategory.SelectedValue);
+                var list = ListCategoriesSubCategories.Where(p => p.Category_Id_fk == index||p.Category_Id_fk==0).Select(p => p.SubCategory).ToList();
+                cmbSubCategory.DataSource = list;
+                cmbSubCategory.DisplayMember = "Name";
+                cmbSubCategory.ValueMember = "Id";
+                cmbProductType.Enabled = false;
+                cmbSubCategory.Enabled = true;
+
+            }
+
+        }
+
+        private void cmbSubCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSubCategory.SelectedIndex != 0)
+            {
+                int index = Convert.ToInt16(cmbCategory.SelectedValue);
+                int index1 = Convert.ToInt16(cmbSubCategory.SelectedValue);
+                var index2 = ListCategoriesSubCategories.SingleOrDefault(p => p.Category_Id_fk == index&&p.SubCategory_Id_fk==index1).Id;
+                var tt = ListProductTypes.Where(p => p.Categorysubcategoreis_Id_fk == index2).Select(p => p).ToList();
+                cmbProductType.DataSource = tt;
+                cmbProductType.DisplayMember = "Name";
+                cmbProductType.ValueMember = "Id";
+                cmbProductType.Enabled = true;
+
+            }
         }
     }
 }
